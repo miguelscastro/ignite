@@ -1,3 +1,6 @@
+# React
+For React projects:
+
 ## Setup
 inside the project, install dependencies:
 ```
