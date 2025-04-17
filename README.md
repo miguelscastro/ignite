@@ -1,7 +1,7 @@
 # React
 For React projects:
 
-## Setup
+### Setup
 inside the project, install dependencies:
 ```
 npm install
