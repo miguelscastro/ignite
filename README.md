@@ -1,8 +1,5 @@
-# Feed
-A simple feed with posts and comments that can be added or deleted. Developed with React and Typescript
-
 ## Setup
-inside ignite-feed, install dependencies:
+inside the project, install dependencies:
 ```
 npm install
 ```
