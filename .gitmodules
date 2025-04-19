@@ -4,3 +4,6 @@
 [submodule "react/02-coffee-delivery"]
 	path = react/02-coffee-delivery
 	url = https://github.com/miguelscastro/coffee-delivery
+[submodule "java/01-livraria"]
+	path = java/01-livraria
+	url = https://github.com/miguelscastro/livraria
