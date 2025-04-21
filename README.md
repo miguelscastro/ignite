@@ -19,5 +19,5 @@ inside the project folder, install dependencies:
 mvn install
 ```
 
-Now just press F5 to run (requires Java RedHat Extension Pack):
+Now just press F5 to run (requires Java RedHat Extension Pack)
 
