@@ -1,5 +1,8 @@
 package br.com.miguelcastro.gestao_vagas.modules.company.useCases;
 
+import java.time.Duration;
+import java.time.Instant;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.authentication.BadCredentialsException;
@@ -41,6 +44,7 @@ public class AuthCompanyUseCase {
         Algorithm algorithm = Algorithm.HMAC256(secretKey);
         var token = JWT.create().withIssuer("javagas")
                 .withSubject(company.getId().toString())
+                .withExpiresAt(Instant.now().plus(Duration.ofHours(2)))
                 .sign(algorithm);
 
         return token;
