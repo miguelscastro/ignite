@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.miguelcastro.gestao_vagas.modules.company.dto.AuthCompanyDTO;
+import br.com.miguelcastro.gestao_vagas.modules.company.dto.AuthCompanyRequestDTO;
 import br.com.miguelcastro.gestao_vagas.modules.company.useCases.AuthCompanyUseCase;
 
 @RestController
@@ -19,7 +19,7 @@ public class AuthCompanyController {
     private AuthCompanyUseCase authCompanyUseCase;
 
     @PostMapping("/company")
-    public ResponseEntity<Object> create(@RequestBody AuthCompanyDTO authCompanyDTO) {
+    public ResponseEntity<Object> create(@RequestBody AuthCompanyRequestDTO authCompanyDTO) {
         try {
             var result = this.authCompanyUseCase.execute(authCompanyDTO);
             return ResponseEntity.ok().body(result);
