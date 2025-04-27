@@ -20,9 +20,10 @@ import br.com.miguelcastro.gestao_vagas.modules.company.repositories.CompanyRepo
 public class AuthCompanyUseCase {
 
     @Value("${security.token.secret}")
-    private String secretKey;
+    public String secretKey;
 
     private final PasswordEncoder passwordEncoder;
+
     @Autowired
     private CompanyRepository companyRepository;
 
