@@ -37,12 +37,12 @@ public class AuthCompanyUseCase {
     public AuthCompanyResponseDTO execute(AuthCompanyRequestDTO authCompanyRequestDTO) {
         var company = this.companyRepository.findByUsername(authCompanyRequestDTO.username())
                 .orElseThrow(() -> {
-                    throw new UsernameNotFoundException("Usuário ou senha incorretos");
+                    throw new UsernameNotFoundException("User or password is invalid");
                 });
         var passwordMatches = this.passwordEncoder.matches(authCompanyRequestDTO.password(), company.getPassword());
 
         if (!passwordMatches) {
-            throw new BadCredentialsException("Usuário ou senha incorretos");
+            throw new BadCredentialsException("User or password is invalid");
         }
 
         Algorithm algorithm = Algorithm.HMAC256(secretKey);

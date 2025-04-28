@@ -39,13 +39,13 @@ public class AuthCandidateUseCase {
         var candidate = this.candidateRepository
                 .findByUsername(authCandidateRequestDTO.username())
                 .orElseThrow(() -> {
-                    throw new UsernameNotFoundException("Usuário ou senha incorretos");
+                    throw new UsernameNotFoundException("User or password is invalid");
                 });
         var password = this.passwordEncoder
                 .matches(authCandidateRequestDTO.password(), candidate.getPassword());
 
         if (!password) {
-            throw new BadCredentialsException("Usuário ou senha incorretos");
+            throw new BadCredentialsException("User or password is invalid");
         }
 
         Algorithm algorithm = Algorithm.HMAC256(secretKey);
