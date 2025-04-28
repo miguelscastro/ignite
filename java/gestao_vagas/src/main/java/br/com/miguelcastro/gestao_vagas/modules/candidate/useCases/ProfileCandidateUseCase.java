@@ -26,6 +26,7 @@ public class ProfileCandidateUseCase {
                 .username(candidate.getUsername())
                 .email(candidate.getEmail())
                 .id(candidate.getId())
+                .name(candidate.getName())
                 .build();
 
         return candidateDTO;
