@@ -4,6 +4,7 @@ import java.time.Duration;
 import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
+import java.util.Arrays;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -49,6 +50,7 @@ public class AuthCompanyUseCase {
         var expiresIn = Instant.now().plus(Duration.ofHours(2));
         var token = JWT.create().withIssuer("javagas")
                 .withSubject(company.getId().toString())
+                .withClaim("roles", Arrays.asList("COMPANY"))
                 .withExpiresAt(expiresIn)
                 .sign(algorithm);
 
