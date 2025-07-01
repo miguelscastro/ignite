@@ -1,15 +1,27 @@
-# Feed
-A simple feed with posts and comments that can be added or deleted. Developed with React and Typescript
+# Ignite Feed
 
-## Setup
-inside ignite-feed, install dependencies:
-```
-npm install
-```
+Project built during the "Starting with React" module of the Ignite Bootcamp by Rocketseat.
 
-Now just use:
-```
-npm run dev
-```
+**Live demo:** *https://feed-miguelscastro.vercel.app/*
 
-You should find the application running at http://localhost:3001
+## 🧠 About the project
+
+A social media feed, similiar to instagram that allows users to comment on other posts (and create new hardcoded ones via code edition)
+
+## 🚀 Technologies:
+
+- React (Single Page Application framework)
+- TypeScript
+- Vite
+
+## ⚙️ How to run
+
+Clone the repository: `git clone https://github.com/miguelscastro/ignite.git`
+
+enter it's folder: `cd ignite/react/01-fundamentos-reactjs-ts`
+
+Install dependencies: `npm install`
+
+Run the application: `npm run dev`
+
+Then open http://localhost:5173 in your browser.
