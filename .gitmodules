@@ -7,3 +7,6 @@
 [submodule "java/01-livraria"]
 	path = java/01-livraria
 	url = https://github.com/miguelscastro/livraria
+[submodule "react/03-github-blog"]
+	path = react/03-github-blog
+	url = https://github.com/miguelscastro/github-blog
