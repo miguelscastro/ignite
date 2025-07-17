@@ -7,6 +7,7 @@ import tseslint from '@typescript-eslint/eslint-plugin'
 import tsParser from '@typescript-eslint/parser'
 import prettierPlugin from 'eslint-plugin-prettier'
 import rocketseatLint from '@rocketseat/eslint-config/react.js';
+import simpleImportSort from "eslint-plugin-simple-import-sort";
 
 export default [
   {
@@ -30,6 +31,7 @@ export default [
       'react-hooks': reactHooks,
       'react-refresh': reactRefresh,
       '@typescript-eslint': tseslint,
+      "simple-import-sort": simpleImportSort,
       prettier: prettierPlugin,
       rocketseatLint,
     },
@@ -61,6 +63,7 @@ export default [
         ignoreRestSiblings: true
       }],
       '@typescript-eslint/no-explicit-any': 'warn',
+      "simple-import-sort/imports": "error",
     },
     settings: {
       react: {
