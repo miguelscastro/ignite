@@ -10,7 +10,7 @@ import rocketseatLint from '@rocketseat/eslint-config/react.js';
 
 export default [
   {
-    ignores: ['dist', 'node_modules'],
+    ignores: ['dist', 'node_modules', 'vite.config.ts'],
   },
   {
     files: ['**/*.{ts,tsx}'],
