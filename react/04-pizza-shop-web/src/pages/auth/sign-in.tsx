@@ -1,10 +1,41 @@
 import { Label } from '@radix-ui/react-label'
 import { Helmet } from 'react-helmet-async'
+import { useForm } from 'react-hook-form'
+import { toast } from 'sonner'
+import z4 from 'zod/v4'
 
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 
+const signInFormSchema = z4.object({
+  email: z4.email(),
+})
+
+type SignInForm = z4.infer<typeof signInFormSchema>
+
 export function SignIn() {
+  const {
+    register,
+    handleSubmit,
+    formState: { isSubmitting },
+  } = useForm<SignInForm>()
+
+  async function handleSignIn(data: SignInForm) {
+    try {
+      console.log(data)
+      await new Promise((resolve) => setTimeout(resolve, 2000))
+
+      toast.success('Enviamos um link de autenticação para seu e-mail.', {
+        action: {
+          label: 'Reenviar',
+          onClick: () => handleSignIn(data),
+        },
+      })
+    } catch {
+      toast.error('Credenciais inválidas.')
+    }
+  }
+
   return (
     <>
       <Helmet title="Login" />
@@ -18,12 +49,12 @@ export function SignIn() {
               Acompanhe suas vendas pelo painel do parceiro
             </p>
           </div>
-          <form className="space-y-4">
+          <form className="space-y-4" onSubmit={handleSubmit(handleSignIn)}>
             <div className="space-y-2">
               <Label htmlFor="email">Seu e-mail</Label>
-              <Input id="email" type="email" />
+              <Input id="email" type="email" {...register('email')} />
             </div>
-            <Button className="w-full" type="submit">
+            <Button disabled={isSubmitting} className="w-full cursor-pointer" type="submit">
               Acessar painel
             </Button>
           </form>
