@@ -42,7 +42,7 @@ export default [
           printWidth: 80,
           tabWidth: 2,
           singleQuote: true,
-          trailingComma: 'auto',
+          trailingComma: 'es5',
           arrowParens: 'always',
           semi: false,
           endOfLine: 'auto',
