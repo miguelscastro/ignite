@@ -1,10 +1,10 @@
-import './global.css'
+import "./global.css";
 
-import { Helmet, HelmetProvider } from 'react-helmet-async'
-import { RouterProvider } from 'react-router'
-import { Toaster } from 'sonner'
+import { Helmet, HelmetProvider } from "react-helmet-async";
+import { RouterProvider } from "react-router";
+import { Toaster } from "sonner";
 
-import { router } from './router'
+import { router } from "./router";
 
 export function App() {
   return (
@@ -13,5 +13,5 @@ export function App() {
       <Toaster richColors />
       <RouterProvider router={router} />
     </HelmetProvider>
-  )
+  );
 }
