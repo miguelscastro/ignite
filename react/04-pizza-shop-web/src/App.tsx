@@ -5,7 +5,7 @@ import { RouterProvider } from "react-router";
 import { Toaster } from "sonner";
 
 import { ThemeProvider } from "./components/theme/theme-provider";
-import { router } from "./router";
+import { routes } from "./routes";
 
 export function App() {
   return (
@@ -13,7 +13,7 @@ export function App() {
       <ThemeProvider storageKey="pizzashop-theme" defaultTheme="dark">
         <Helmet titleTemplate="%s | pizza.shop" />
         <Toaster richColors />
-        <RouterProvider router={router} />
+        <RouterProvider router={routes} />
       </ThemeProvider>
     </HelmetProvider>
   );
