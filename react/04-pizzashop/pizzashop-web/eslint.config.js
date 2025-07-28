@@ -60,7 +60,9 @@ export default [
       '@typescript-eslint/no-unused-vars': ['warn', {
         vars: 'all',
         args: 'after-used',
-        ignoreRestSiblings: true
+        ignoreRestSiblings: true,
+        caughtErrors: 'all',
+        varsIgnorePattern: "^_"
       }],
       '@typescript-eslint/no-explicit-any': 'warn',
       "simple-import-sort/imports": "error",

@@ -10,14 +10,14 @@ import { registerRestaurant } from "@/api/register-restaurant";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 
-const SignUpFormSchema = z4.object({
+const _SignUpFormSchema = z4.object({
   restaurantName: z4.string(),
   managerName: z4.string(),
   phone: z4.string(),
   email: z4.email(),
 });
 
-type SignUpForm = z4.infer<typeof SignUpFormSchema>;
+type SignUpForm = z4.infer<typeof _SignUpFormSchema>;
 
 export function SignUp() {
   const navigate = useNavigate();
