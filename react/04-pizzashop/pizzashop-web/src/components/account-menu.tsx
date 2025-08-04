@@ -1,14 +1,14 @@
-import { useMutation, useQuery } from "@tanstack/react-query";
-import { Building, ChevronDown, LogOut } from "lucide-react";
-import { useNavigate } from "react-router";
+import { useMutation, useQuery } from '@tanstack/react-query'
+import { Building, ChevronDown, LogOut } from 'lucide-react'
+import { useNavigate } from 'react-router'
 
-import { getManagedRestaurant } from "@/api/get-managed-restaurant";
-import { getProfile } from "@/api/get-profile";
-import { signOut } from "@/api/sign-out";
+import { getManagedRestaurant } from '@/api/get-managed-restaurant'
+import { getProfile } from '@/api/get-profile'
+import { signOut } from '@/api/sign-out'
 
-import { StoreProfileDialog } from "./store-profile-dialog";
-import { Button } from "./ui/button";
-import { Dialog, DialogTrigger } from "./ui/dialog";
+import { StoreProfileDialog } from './store-profile-dialog'
+import { Button } from './ui/button'
+import { Dialog, DialogTrigger } from './ui/dialog'
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -16,31 +16,31 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "./ui/dropdown-menu";
-import { Skeleton } from "./ui/skeleton";
+} from './ui/dropdown-menu'
+import { Skeleton } from './ui/skeleton'
 
 export function AccountMenu() {
-  const navigate = useNavigate();
+  const navigate = useNavigate()
 
   const { data: profile, isLoading: isLoadingProfile } = useQuery({
-    queryKey: ["profile"],
+    queryKey: ['profile'],
     queryFn: getProfile,
     staleTime: Infinity,
-  });
+  })
 
   const { data: managedRestaurant, isLoading: isLoadingManagedRestaurant } =
     useQuery({
-      queryKey: ["managed-restaurant"],
+      queryKey: ['managed-restaurant'],
       queryFn: getManagedRestaurant,
       staleTime: Infinity,
-    });
+    })
 
   const { mutateAsync: signOutFn, isPending: isSigningOut } = useMutation({
     mutationFn: signOut,
     onSuccess: () => {
-      navigate("/sign-in", { replace: true });
+      navigate('/sign-in', { replace: true })
     },
-  });
+  })
 
   return (
     <Dialog>
@@ -68,7 +68,7 @@ export function AccountMenu() {
             ) : (
               <>
                 <span>{profile?.name}</span>
-                <span className="text-xs font-normal text-muted-foreground">
+                <span className="text-muted-foreground text-xs font-normal">
                   {profile?.email}
                 </span>
               </>
@@ -96,5 +96,5 @@ export function AccountMenu() {
 
       <StoreProfileDialog />
     </Dialog>
-  );
+  )
 }

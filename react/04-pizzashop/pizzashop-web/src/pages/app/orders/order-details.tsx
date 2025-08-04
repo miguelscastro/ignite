@@ -1,10 +1,10 @@
-import { DialogDescription } from "@radix-ui/react-dialog";
+import { DialogDescription } from '@radix-ui/react-dialog'
 
 import {
   DialogContent,
   DialogHeader,
   DialogTitle,
-} from "@/components/ui/dialog";
+} from '@/components/ui/dialog'
 import {
   Table,
   TableBody,
@@ -13,7 +13,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/ui/table";
+} from '@/components/ui/table'
 
 export function OrderDetails() {
   return (
@@ -31,7 +31,7 @@ export function OrderDetails() {
               <TableCell className="flex justify-end">
                 <div className="flex items-center gap-2">
                   <span className="h-2 w-2 rounded-full bg-gray-400" />
-                  <span className="font-medium text-muted-foreground">
+                  <span className="text-muted-foreground font-medium">
                     Pendente
                   </span>
                 </div>
@@ -103,5 +103,5 @@ export function OrderDetails() {
         </Table>
       </div>
     </DialogContent>
-  );
+  )
 }

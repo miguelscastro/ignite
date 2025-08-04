@@ -1,16 +1,16 @@
-import { BarChart } from "lucide-react";
-import { Cell, Pie, PieChart, ResponsiveContainer } from "recharts";
-import colors from "tailwindcss/colors";
+import { BarChart } from 'lucide-react'
+import { Cell, Pie, PieChart, ResponsiveContainer } from 'recharts'
+import colors from 'tailwindcss/colors'
 
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 
 const data = [
-  { product: "Pepperoni", amount: 40 },
-  { product: "Mussarela", amount: 30 },
-  { product: "Marguerita", amount: 50 },
-  { product: "Quatro queijos", amount: 16 },
-  { product: "Frango com Catupiry", amount: 26 },
-];
+  { product: 'Pepperoni', amount: 40 },
+  { product: 'Mussarela', amount: 30 },
+  { product: 'Marguerita', amount: 50 },
+  { product: 'Quatro queijos', amount: 16 },
+  { product: 'Frango com Catupiry', amount: 26 },
+]
 
 const COLORS = [
   colors.sky[500],
@@ -18,7 +18,7 @@ const COLORS = [
   colors.violet[500],
   colors.emerald[500],
   colors.rose[500],
-];
+]
 
 export function PopularProductsChart() {
   return (
@@ -28,7 +28,7 @@ export function PopularProductsChart() {
           <CardTitle className="text-base font-medium">
             Produtos populares
           </CardTitle>
-          <BarChart className="h-4 w-4 text-muted-foreground" />
+          <BarChart className="text-muted-foreground h-4 w-4" />
         </div>
       </CardHeader>
       <CardContent>
@@ -53,25 +53,25 @@ export function PopularProductsChart() {
                 value,
                 index,
               }) => {
-                const RADIAN = Math.PI / 180;
-                const radius = 12 + innerRadius + (outerRadius - innerRadius);
-                const x = cx + radius * Math.cos(-midAngle! * RADIAN);
-                const y = cy + radius * Math.sin(-midAngle! * RADIAN);
+                const RADIAN = Math.PI / 180
+                const radius = 12 + innerRadius + (outerRadius - innerRadius)
+                const x = cx + radius * Math.cos(-midAngle! * RADIAN)
+                const y = cy + radius * Math.sin(-midAngle! * RADIAN)
 
                 return (
                   <text
                     x={x}
                     y={y}
                     className="fill-muted-foreground text-xs"
-                    textAnchor={x > cx ? "start" : "end"}
+                    textAnchor={x > cx ? 'start' : 'end'}
                     dominantBaseline="central"
                   >
                     {data[index!].product.length > 12
-                      ? data[index!].product.substring(0, 12).concat("...")
-                      : data[index!].product}{" "}
+                      ? data[index!].product.substring(0, 12).concat('...')
+                      : data[index!].product}{' '}
                     ({value})
                   </text>
-                );
+                )
               }}
             >
               {data.map((_, index) => {
@@ -81,12 +81,12 @@ export function PopularProductsChart() {
                     fill={COLORS[index]}
                     className="stroke-background hover:opacity-80 dark:stroke-zinc-900"
                   />
-                );
+                )
               })}
             </Pie>
           </PieChart>
         </ResponsiveContainer>
       </CardContent>
     </Card>
-  );
+  )
 }
