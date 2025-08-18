@@ -1,12 +1,12 @@
-import { Helmet } from "react-helmet-async";
+import { Helmet } from 'react-helmet-async'
 
-import { PopularProductsChart } from "@/pages/popular-products-chart";
+import { PopularProductsChart } from '@/pages/popular-products-chart'
 
-import { DayOrdersAmountCard } from "./day-orders-amount-card";
-import { MonthCanceledOrdersAmountCard } from "./month-canceled-orders-amount-card";
-import { MonthOrdersAmountCard } from "./month-orders-amount-card";
-import { MonthRevenueCard } from "./month-revenue-card";
-import { RevenueChart } from "./revenue-chart";
+import { DayOrdersAmountCard } from './day-orders-amount-card'
+import { MonthCanceledOrdersAmountCard } from './month-canceled-orders-amount-card'
+import { MonthOrdersAmountCard } from './month-orders-amount-card'
+import { MonthRevenueCard } from './month-revenue-card'
+import { RevenueChart } from './revenue-chart'
 
 export function Dashboard() {
   return (
@@ -28,5 +28,5 @@ export function Dashboard() {
         </div>
       </div>
     </>
-  );
+  )
 }
