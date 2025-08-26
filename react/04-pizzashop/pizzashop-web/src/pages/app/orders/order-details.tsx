@@ -20,6 +20,8 @@ import {
   TableRow,
 } from '@/components/ui/table'
 
+import { OrderDetailsSkeleton } from './order-details-skeleton'
+
 export interface OrderDetailsProps {
   orderId: string
   open: boolean
@@ -39,7 +41,7 @@ export function OrderDetails({ orderId, open }: OrderDetailsProps) {
         <DialogDescription>Detalhes do pedido</DialogDescription>
       </DialogHeader>
 
-      {order && (
+      {order ? (
         <div className="space-y-6">
           <Table>
             <TableBody>
@@ -96,7 +98,7 @@ export function OrderDetails({ orderId, open }: OrderDetailsProps) {
               <TableRow>
                 <TableHead>Produto</TableHead>
                 <TableHead className="text-right">Qtd.</TableHead>
-                <TableHead className="text-right">Preço</TableHead>
+                <TableHead className="text-left">Preço</TableHead>
                 <TableHead className="text-right">Subtotal</TableHead>
               </TableRow>
             </TableHeader>
@@ -108,7 +110,7 @@ export function OrderDetails({ orderId, open }: OrderDetailsProps) {
                     <TableCell className="text-right">
                       {item.quantity}
                     </TableCell>
-                    <TableCell className="text-right">
+                    <TableCell className="text-left">
                       {(item.priceInCents / 100).toLocaleString('pt-BR', {
                         style: 'currency',
                         currency: 'BRL',
@@ -140,6 +142,8 @@ export function OrderDetails({ orderId, open }: OrderDetailsProps) {
             </TableFooter>
           </Table>
         </div>
+      ) : (
+        <OrderDetailsSkeleton />
       )}
     </DialogContent>
   )
