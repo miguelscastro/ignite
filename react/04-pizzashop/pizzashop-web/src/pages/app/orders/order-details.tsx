@@ -33,7 +33,6 @@ export function OrderDetails({ orderId, open }: OrderDetailsProps) {
     queryFn: () => getOrderDetails({ orderId }),
     enabled: open,
   })
-
   return (
     <DialogContent>
       <DialogHeader>
