@@ -10,11 +10,11 @@ import { signIn } from '@/api/sign-in'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 
-const _signInFormSchema = z4.object({
+const signInFormSchema = z4.object({
   email: z4.email(),
 })
 
-type SignInForm = z4.infer<typeof _signInFormSchema>
+type SignInForm = z4.infer<typeof signInFormSchema>
 
 export function SignIn() {
   const [searchParams] = useSearchParams()
