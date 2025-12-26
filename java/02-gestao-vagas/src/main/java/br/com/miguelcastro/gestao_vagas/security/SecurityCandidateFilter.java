@@ -3,6 +3,7 @@ package br.com.miguelcastro.gestao_vagas.security;
 import java.io.IOException;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.lang.NonNull;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -18,40 +19,46 @@ import jakarta.servlet.http.HttpServletResponse;
 @Component
 public class SecurityCandidateFilter extends OncePerRequestFilter {
 
-    @Autowired
-    private JWTCandidateProvider jwtProvider;
+	@Autowired
+	private JWTCandidateProvider jwtProvider;
 
-    @Override
-    protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
-            throws ServletException, IOException {
+	@Override
+	protected void doFilterInternal(@NonNull HttpServletRequest request, @NonNull HttpServletResponse response,
+			@NonNull FilterChain filterChain) throws ServletException, IOException {
 
-        String header = request.getHeader("Authorization");
+		String path = request.getRequestURI();
 
-        if (request.getRequestURI().startsWith("/candidate")) {
-            if (header != null) {
-                var token = this.jwtProvider.validateToken(header);
+		if (path.contains("/swagger-ui") || path.contains("/v3/api-docs") || path.contains("/webjars")
+				|| path.contains("/swagger-resources")) {
 
-                if (token == null) {
-                    response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
-                    return;
-                }
+			filterChain.doFilter(request, response);
+			return;
+		}
 
-                request.setAttribute("candidate_id", token.getSubject());
-                var roles = token.getClaim("roles").asList(Object.class);
-                var grants = roles.stream().map(
-                        role -> new SimpleGrantedAuthority("ROLE_" + role.toString()
-                                .toUpperCase()))
-                        .toList();
+		String header = request.getHeader("Authorization");
 
-                UsernamePasswordAuthenticationToken auth = new UsernamePasswordAuthenticationToken(token.getSubject(),
-                        null,
-                        grants);
+		if (request.getRequestURI().startsWith("/candidate")) {
+			if (header != null) {
+				var token = this.jwtProvider.validateToken(header);
 
-                SecurityContextHolder.getContext().setAuthentication(auth);
-            }
-        }
+				if (token == null) {
+					response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+					return;
+				}
 
-        filterChain.doFilter(request, response);
-    }
+				request.setAttribute("candidate_id", token.getSubject());
+				var roles = token.getClaim("roles").asList(Object.class);
+				var grants = roles.stream()
+						.map(role -> new SimpleGrantedAuthority("ROLE_" + role.toString().toUpperCase())).toList();
+
+				UsernamePasswordAuthenticationToken auth = new UsernamePasswordAuthenticationToken(token.getSubject(),
+						null, grants);
+
+				SecurityContextHolder.getContext().setAuthentication(auth);
+			}
+		}
+
+		filterChain.doFilter(request, response);
+	}
 
 }

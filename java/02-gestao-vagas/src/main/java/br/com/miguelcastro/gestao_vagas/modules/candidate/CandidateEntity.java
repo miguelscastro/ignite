@@ -19,23 +19,23 @@ import lombok.Data;
 @Entity(name = "candidate")
 public class CandidateEntity {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    private UUID id;
-    private String name;
+	@Id
+	@GeneratedValue(strategy = GenerationType.UUID)
+	private UUID id;
+	private String name;
 
-    @NotBlank()
-    @Pattern(regexp = "^(?!\\s*$).+", message = "O campo [username] não deve conter espaços")
-    private String username;
+	@NotBlank()
+	@Pattern(regexp = "^(?!\\s*$).+", message = "O campo [username] não deve conter espaços")
+	private String username;
 
-    @Email(message = "O campo [email] deve conter um e-mail válido")
-    private String email;
+	@Email(message = "O campo [email] deve conter um e-mail válido")
+	private String email;
 
-    @Length(min = 10, max = 100)
-    private String password;
-    private String description;
-    private String curriculum;
+	@Length(min = 10, max = 100)
+	private String password;
+	private String description;
+	private String curriculum;
 
-    @CreationTimestamp
-    private LocalDateTime createdAt;
+	@CreationTimestamp
+	private LocalDateTime createdAt;
 }

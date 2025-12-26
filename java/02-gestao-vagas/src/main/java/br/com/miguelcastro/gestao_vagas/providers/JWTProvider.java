@@ -11,24 +11,22 @@ import com.auth0.jwt.interfaces.DecodedJWT;
 @Service
 public class JWTProvider {
 
-    @Value("${security.token.secret}")
-    public String secretKey;
+	@Value("${security.token.secret}")
+	public String secretKey;
 
-    public DecodedJWT validateToken(String token) {
-        token = token.replace("Bearer ", "");
+	public DecodedJWT validateToken(String token) {
+		token = token.replace("Bearer ", "");
 
-        Algorithm algorithm = Algorithm.HMAC256(secretKey);
+		Algorithm algorithm = Algorithm.HMAC256(secretKey);
 
-        try {
-            var decodedToken = JWT.require(algorithm)
-                    .build()
-                    .verify(token);
-            return decodedToken;
+		try {
+			var decodedToken = JWT.require(algorithm).build().verify(token);
+			return decodedToken;
 
-        } catch (JWTVerificationException e) {
-            e.printStackTrace();
-            return null;
-        }
+		} catch (JWTVerificationException e) {
+			e.printStackTrace();
+			return null;
+		}
 
-    }
+	}
 }

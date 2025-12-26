@@ -6,6 +6,6 @@ import lombok.Data;
 @Data
 @AllArgsConstructor
 public class ErrorMessageDTO {
-    private String message;
-    private String field;
+	private String message;
+	private String field;
 }

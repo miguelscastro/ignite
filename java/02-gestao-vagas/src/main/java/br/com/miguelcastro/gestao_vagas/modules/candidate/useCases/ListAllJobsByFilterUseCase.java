@@ -1,4 +1,6 @@
-package br.com.miguelcastro.gestao_vagas.modules.company.useCases;
+package br.com.miguelcastro.gestao_vagas.modules.candidate.useCases;
+
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -7,11 +9,12 @@ import br.com.miguelcastro.gestao_vagas.modules.company.entities.JobEntity;
 import br.com.miguelcastro.gestao_vagas.modules.company.repositories.JobRepository;
 
 @Service
-public class CreateJobUseCase {
-	@Autowired
-	JobRepository jobRepository;
+public class ListAllJobsByFilterUseCase {
 
-	public JobEntity execute(JobEntity jobEntity) {
-		return this.jobRepository.save(jobEntity);
+	@Autowired
+	private JobRepository jobRepository;
+
+	public List<JobEntity> execute(String filter) {
+		return this.jobRepository.findByDescriptionContaining(filter);
 	}
 }

@@ -14,27 +14,27 @@ import org.springframework.security.web.authentication.www.BasicAuthenticationFi
 @EnableMethodSecurity
 public class SecurityConfig {
 
-    @Autowired
-    private SecurityFilter securityFilter;
-    @Autowired
-    private SecurityCandidateFilter securityCandidateFilter;
+	@Autowired
+	private SecurityFilter securityFilter;
+	@Autowired
+	private SecurityCandidateFilter securityCandidateFilter;
 
-    @Bean
-    SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        return http.csrf(csrf -> csrf.disable())
-                .authorizeHttpRequests(auth -> {
-                    auth.requestMatchers("/candidate/").permitAll()
-                            .requestMatchers("/company/").permitAll()
-                            .requestMatchers("/company/auth").permitAll()
-                            .requestMatchers("/candidate/auth").permitAll();
-                    auth.anyRequest().authenticated();
-                })
-                .addFilterBefore(securityCandidateFilter, BasicAuthenticationFilter.class)
-                .addFilterBefore(securityFilter, BasicAuthenticationFilter.class).build();
-    }
+	private static final String[] SWAGGER_LIST = {"/swagger-ui/**", "/v3/api-docs/**", "/swagger-resources/**",
+			"/swagger-ui.html"};
 
-    @Bean
-    PasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder();
-    }
+	@Bean
+	SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+		return http.csrf(csrf -> csrf.disable()).authorizeHttpRequests(auth -> {
+			auth.requestMatchers("/candidate/").permitAll().requestMatchers("/company/").permitAll()
+					.requestMatchers("/company/auth").permitAll().requestMatchers("/candidate/auth").permitAll()
+					.requestMatchers(SWAGGER_LIST).permitAll();
+			auth.anyRequest().authenticated();
+		}).addFilterBefore(securityCandidateFilter, BasicAuthenticationFilter.class)
+				.addFilterBefore(securityFilter, BasicAuthenticationFilter.class).build();
+	}
+
+	@Bean
+	PasswordEncoder passwordEncoder() {
+		return new BCryptPasswordEncoder();
+	}
 }

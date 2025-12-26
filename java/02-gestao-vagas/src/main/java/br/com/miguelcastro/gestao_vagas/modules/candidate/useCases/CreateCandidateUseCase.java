@@ -11,20 +11,20 @@ import br.com.miguelcastro.gestao_vagas.modules.candidate.CandidateRepository;
 @Service
 public class CreateCandidateUseCase {
 
-    @Autowired
-    private CandidateRepository candidateRepository;
+	@Autowired
+	private CandidateRepository candidateRepository;
 
-    @Autowired
-    private PasswordEncoder passwordEncoder;
+	@Autowired
+	private PasswordEncoder passwordEncoder;
 
-    public CandidateEntity execute(CandidateEntity candidateEntity) {
-        this.candidateRepository.findByUsernameOrEmail(candidateEntity.getUsername(),
-                candidateEntity.getEmail()).ifPresent(user -> {
-                    throw new UserFoundException();
-                });
-        var password = passwordEncoder.encode(candidateEntity.getPassword());
-        candidateEntity.setPassword(password);
+	public CandidateEntity execute(CandidateEntity candidateEntity) {
+		this.candidateRepository.findByUsernameOrEmail(candidateEntity.getUsername(), candidateEntity.getEmail())
+				.ifPresent(user -> {
+					throw new UserFoundException();
+				});
+		var password = passwordEncoder.encode(candidateEntity.getPassword());
+		candidateEntity.setPassword(password);
 
-        return this.candidateRepository.save(candidateEntity);
-    }
+		return this.candidateRepository.save(candidateEntity);
+	}
 }

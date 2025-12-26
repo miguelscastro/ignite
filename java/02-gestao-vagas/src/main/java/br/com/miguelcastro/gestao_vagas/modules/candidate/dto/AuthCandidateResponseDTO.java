@@ -12,6 +12,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class AuthCandidateResponseDTO {
-    private String access_token;
-    private LocalDateTime expires_in;
+	private String access_token;
+	private LocalDateTime expires_in;
 }

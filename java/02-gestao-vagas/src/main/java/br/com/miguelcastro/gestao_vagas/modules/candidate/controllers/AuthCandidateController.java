@@ -15,16 +15,16 @@ import br.com.miguelcastro.gestao_vagas.modules.candidate.useCases.AuthCandidate
 @RequestMapping("/candidate")
 public class AuthCandidateController {
 
-    @Autowired
-    private AuthCandidateUseCase authCandidateUseCase;
+	@Autowired
+	private AuthCandidateUseCase authCandidateUseCase;
 
-    @PostMapping("/auth")
-    public ResponseEntity<Object> auth(@RequestBody AuthCandidateRequestDTO authCandidateRequestDTO) {
-        try {
-            var token = this.authCandidateUseCase.execute(authCandidateRequestDTO);
-            return ResponseEntity.ok().body(token);
-        } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(e.getMessage());
-        }
-    }
+	@PostMapping("/auth")
+	public ResponseEntity<Object> auth(@RequestBody AuthCandidateRequestDTO authCandidateRequestDTO) {
+		try {
+			var token = this.authCandidateUseCase.execute(authCandidateRequestDTO);
+			return ResponseEntity.ok().body(token);
+		} catch (Exception e) {
+			return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(e.getMessage());
+		}
+	}
 }

@@ -12,23 +12,18 @@ import br.com.miguelcastro.gestao_vagas.modules.candidate.dto.ProfileCandidateRe
 @Service
 public class ProfileCandidateUseCase {
 
-    @Autowired
-    private CandidateRepository candidateRepository;
+	@Autowired
+	private CandidateRepository candidateRepository;
 
-    public ProfileCandidateResponseDTO execute(UUID idCandidate) {
-        var candidate = this.candidateRepository.findById(idCandidate)
-                .orElseThrow(() -> {
-                    throw new UsernameNotFoundException("User not found");
-                });
+	public ProfileCandidateResponseDTO execute(UUID idCandidate) {
+		var candidate = this.candidateRepository.findById(idCandidate).orElseThrow(() -> {
+			throw new UsernameNotFoundException("User not found");
+		});
 
-        var candidateDTO = ProfileCandidateResponseDTO.builder()
-                .description(candidate.getDescription())
-                .username(candidate.getUsername())
-                .email(candidate.getEmail())
-                .id(candidate.getId())
-                .name(candidate.getName())
-                .build();
+		var candidateDTO = ProfileCandidateResponseDTO.builder().description(candidate.getDescription())
+				.username(candidate.getUsername()).email(candidate.getEmail()).id(candidate.getId())
+				.name(candidate.getName()).build();
 
-        return candidateDTO;
-    }
+		return candidateDTO;
+	}
 }
