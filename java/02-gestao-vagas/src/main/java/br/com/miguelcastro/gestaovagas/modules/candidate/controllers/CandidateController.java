@@ -29,6 +29,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequiredArgsConstructor
+@Tag(name = "Candidato", description = "Informações do candidato")
 @RequestMapping("/candidate")
 public class CandidateController {
 
@@ -37,6 +38,13 @@ public class CandidateController {
   private final ListAllJobsByFilterUseCase listAllJobsByFilterUseCase;
 
   @PostMapping("/")
+  @Operation(
+      summary = "Cadastro de candidato",
+      description = "Essa função é responsável por cadastrar um candidato")
+  @ApiResponse(
+      responseCode = "200",
+      content = @Content(schema = @Schema(implementation = CandidateEntity.class)))
+  @ApiResponse(responseCode = "400", description = "User not found")
   public ResponseEntity<Object> create(@Valid @RequestBody CandidateEntity candidateEntity) {
     try {
       var result = this.createCandidateUseCase.execute(candidateEntity);
@@ -48,7 +56,6 @@ public class CandidateController {
 
   @PreAuthorize("hasRole('CANDIDATE')")
   @GetMapping("/")
-  @Tag(name = "Candidato", description = "Informações do candidato")
   @Operation(
       summary = "Perfil do candidato",
       description = "Essa função é responsável por buscar as informações do candidato")
@@ -70,7 +77,6 @@ public class CandidateController {
 
   @PreAuthorize("hasRole('CANDIDATE')")
   @GetMapping("/job")
-  @Tag(name = "Candidato", description = "Informações do candidato")
   @Operation(
       summary = "Listagem de vagas disponível para o candidato",
       description =
