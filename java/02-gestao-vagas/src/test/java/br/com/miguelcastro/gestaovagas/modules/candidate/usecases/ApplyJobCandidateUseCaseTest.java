@@ -5,8 +5,8 @@ import static org.mockito.Mockito.when;
 
 import br.com.miguelcastro.gestaovagas.exceptions.JobNotFoundException;
 import br.com.miguelcastro.gestaovagas.exceptions.UserNotFoundException;
-import br.com.miguelcastro.gestaovagas.modules.candidate.CandidateEntity;
-import br.com.miguelcastro.gestaovagas.modules.candidate.CandidateRepository;
+import br.com.miguelcastro.gestaovagas.modules.candidate.entities.CandidateEntity;
+import br.com.miguelcastro.gestaovagas.modules.candidate.repositories.CandidateRepository;
 import br.com.miguelcastro.gestaovagas.modules.company.repositories.JobRepository;
 import java.util.Optional;
 import java.util.UUID;

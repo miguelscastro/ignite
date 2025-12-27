@@ -1,4 +1,4 @@
-package br.com.miguelcastro.gestaovagas.modules.candidate;
+package br.com.miguelcastro.gestaovagas.modules.candidate.entities;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.media.Schema.RequiredMode;

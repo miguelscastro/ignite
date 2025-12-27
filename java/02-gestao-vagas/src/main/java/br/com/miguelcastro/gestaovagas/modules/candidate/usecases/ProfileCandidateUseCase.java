@@ -1,7 +1,7 @@
 package br.com.miguelcastro.gestaovagas.modules.candidate.usecases;
 
-import br.com.miguelcastro.gestaovagas.modules.candidate.CandidateRepository;
 import br.com.miguelcastro.gestaovagas.modules.candidate.dto.ProfileCandidateResponseDTO;
+import br.com.miguelcastro.gestaovagas.modules.candidate.repositories.CandidateRepository;
 import java.util.UUID;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;

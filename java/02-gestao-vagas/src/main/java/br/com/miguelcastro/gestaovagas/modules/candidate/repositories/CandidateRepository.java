@@ -1,5 +1,6 @@
-package br.com.miguelcastro.gestaovagas.modules.candidate;
+package br.com.miguelcastro.gestaovagas.modules.candidate.repositories;
 
+import br.com.miguelcastro.gestaovagas.modules.candidate.entities.CandidateEntity;
 import java.util.Optional;
 import java.util.UUID;
 import org.springframework.data.jpa.repository.JpaRepository;

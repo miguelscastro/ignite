@@ -1,8 +1,8 @@
 package br.com.miguelcastro.gestaovagas.modules.candidate.usecases;
 
-import br.com.miguelcastro.gestaovagas.modules.candidate.CandidateRepository;
 import br.com.miguelcastro.gestaovagas.modules.candidate.dto.AuthCandidateRequestDTO;
 import br.com.miguelcastro.gestaovagas.modules.candidate.dto.AuthCandidateResponseDTO;
+import br.com.miguelcastro.gestaovagas.modules.candidate.repositories.CandidateRepository;
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
 import java.time.Duration;

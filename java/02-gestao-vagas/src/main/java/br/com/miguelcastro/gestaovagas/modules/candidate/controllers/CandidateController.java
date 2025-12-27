@@ -1,7 +1,7 @@
 package br.com.miguelcastro.gestaovagas.modules.candidate.controllers;
 
-import br.com.miguelcastro.gestaovagas.modules.candidate.CandidateEntity;
 import br.com.miguelcastro.gestaovagas.modules.candidate.dto.ProfileCandidateResponseDTO;
+import br.com.miguelcastro.gestaovagas.modules.candidate.entities.CandidateEntity;
 import br.com.miguelcastro.gestaovagas.modules.candidate.usecases.CreateCandidateUseCase;
 import br.com.miguelcastro.gestaovagas.modules.candidate.usecases.ListAllJobsByFilterUseCase;
 import br.com.miguelcastro.gestaovagas.modules.candidate.usecases.ProfileCandidateUseCase;

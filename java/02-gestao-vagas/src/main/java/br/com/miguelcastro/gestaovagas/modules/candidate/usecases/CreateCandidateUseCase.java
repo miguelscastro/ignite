@@ -1,8 +1,8 @@
 package br.com.miguelcastro.gestaovagas.modules.candidate.usecases;
 
 import br.com.miguelcastro.gestaovagas.exceptions.UserFoundException;
-import br.com.miguelcastro.gestaovagas.modules.candidate.CandidateEntity;
-import br.com.miguelcastro.gestaovagas.modules.candidate.CandidateRepository;
+import br.com.miguelcastro.gestaovagas.modules.candidate.entities.CandidateEntity;
+import br.com.miguelcastro.gestaovagas.modules.candidate.repositories.CandidateRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
