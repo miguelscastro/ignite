@@ -2,6 +2,7 @@ package br.com.miguelcastro.gestaovagas.modules.candidate.controllers;
 
 import br.com.miguelcastro.gestaovagas.modules.candidate.dto.ProfileCandidateResponseDTO;
 import br.com.miguelcastro.gestaovagas.modules.candidate.entities.CandidateEntity;
+import br.com.miguelcastro.gestaovagas.modules.candidate.usecases.ApplyJobCandidateUseCase;
 import br.com.miguelcastro.gestaovagas.modules.candidate.usecases.CreateCandidateUseCase;
 import br.com.miguelcastro.gestaovagas.modules.candidate.usecases.ListAllJobsByFilterUseCase;
 import br.com.miguelcastro.gestaovagas.modules.candidate.usecases.ProfileCandidateUseCase;
@@ -36,6 +37,7 @@ public class CandidateController {
   private final CreateCandidateUseCase createCandidateUseCase;
   private final ProfileCandidateUseCase profileCandidateUseCase;
   private final ListAllJobsByFilterUseCase listAllJobsByFilterUseCase;
+  private final ApplyJobCandidateUseCase applyJobCandidateUseCase;
 
   @PostMapping("/")
   @Operation(
@@ -89,5 +91,19 @@ public class CandidateController {
   @SecurityRequirement(name = "jwt_auth")
   public List<JobEntity> findJobByFilter(@RequestParam String filter) {
     return this.listAllJobsByFilterUseCase.execute(filter);
+  }
+
+  @PostMapping("/job/apply")
+  @PreAuthorize("hasRole('CANDIDATE')")
+  @SecurityRequirement(name = "jwt_auth")
+  @Operation(
+      summary = "Inscrição do candidato para uma vaga",
+      description = "Essa função é responsável por realizar a inscrição do candidato em uma vaga.")
+  public ResponseEntity<Object> applyJob(HttpServletRequest request, @RequestBody UUID idJob) {
+    var idCandidate = request.getAttribute("candidate_id");
+    var result =
+        this.applyJobCandidateUseCase.execute(UUID.fromString(idCandidate.toString()), idJob);
+
+    return ResponseEntity.ok(result);
   }
 }
