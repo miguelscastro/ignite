@@ -2,6 +2,7 @@ package br.com.miguelcastro.gestaovagas.modules.candidate.usecases;
 
 import br.com.miguelcastro.gestaovagas.exceptions.JobNotFoundException;
 import br.com.miguelcastro.gestaovagas.exceptions.UserNotFoundException;
+import br.com.miguelcastro.gestaovagas.modules.candidate.entities.ApplyJobEntity;
 import br.com.miguelcastro.gestaovagas.modules.candidate.repositories.ApplyJobRepository;
 import br.com.miguelcastro.gestaovagas.modules.candidate.repositories.CandidateRepository;
 import br.com.miguelcastro.gestaovagas.modules.company.repositories.JobRepository;
@@ -17,7 +18,7 @@ public class ApplyJobCandidateUseCase {
   private final JobRepository jobRepository;
   private final ApplyJobRepository applyJobRepository;
 
-  public void execute(UUID idCandidate, UUID idJob) {
+  public ApplyJobEntity execute(UUID idCandidate, UUID idJob) {
     this.candidateRepository
         .findById(idCandidate)
         .orElseThrow(
@@ -31,5 +32,8 @@ public class ApplyJobCandidateUseCase {
             () -> {
               throw new JobNotFoundException();
             });
+
+    var applyJob = ApplyJobEntity.builder().candidateId(idCandidate).jobId(idJob).build();
+    return applyJobRepository.save(applyJob);
   }
 }
