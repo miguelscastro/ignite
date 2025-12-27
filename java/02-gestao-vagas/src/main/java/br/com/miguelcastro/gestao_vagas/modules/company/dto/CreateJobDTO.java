@@ -7,12 +7,12 @@ import lombok.Data;
 @Data
 public class CreateJobDTO {
 
-	@Schema(example = "Vaga para pessoa desenvolvedora júnior", requiredMode = RequiredMode.REQUIRED)
-	private String description;
+  @Schema(example = "Vaga para pessoa desenvolvedora júnior", requiredMode = RequiredMode.REQUIRED)
+  private String description;
 
-	@Schema(example = "GYMPass, Plano de Saúde", requiredMode = RequiredMode.REQUIRED)
-	private String benefits;
+  @Schema(example = "GYMPass, Plano de Saúde", requiredMode = RequiredMode.REQUIRED)
+  private String benefits;
 
-	@Schema(example = "JUNIOR", requiredMode = RequiredMode.REQUIRED)
-	private String level;
+  @Schema(example = "JUNIOR", requiredMode = RequiredMode.REQUIRED)
+  private String level;
 }

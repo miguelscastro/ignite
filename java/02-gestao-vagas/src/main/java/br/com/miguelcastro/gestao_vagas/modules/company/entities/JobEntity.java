@@ -1,10 +1,5 @@
 package br.com.miguelcastro.gestao_vagas.modules.company.entities;
 
-import java.time.LocalDateTime;
-import java.util.UUID;
-
-import org.hibernate.annotations.CreationTimestamp;
-
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -14,10 +9,13 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.validation.constraints.NotBlank;
+import java.time.LocalDateTime;
+import java.util.UUID;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.CreationTimestamp;
 
 @Entity(name = "job")
 @Data
@@ -26,26 +24,26 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class JobEntity {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.UUID)
-	private UUID id;
+  @Id
+  @GeneratedValue(strategy = GenerationType.UUID)
+  private UUID id;
 
-	@NotBlank()
-	@Schema(example = "Vaga para design")
-	private String description;
-	private String benefits;
+  @NotBlank()
+  @Schema(example = "Vaga para design")
+  private String description;
 
-	@NotBlank(message = "Esse campo é obrigatório")
-	@Schema(example = "SENIOR")
-	private String level;
+  private String benefits;
 
-	@ManyToOne()
-	@JoinColumn(name = "company_id", insertable = false, updatable = false)
-	private CompanyEntity companyEntity;
+  @NotBlank(message = "Esse campo é obrigatório")
+  @Schema(example = "SENIOR")
+  private String level;
 
-	@Column(name = "company_id")
-	private UUID companyId;
+  @ManyToOne()
+  @JoinColumn(name = "company_id", insertable = false, updatable = false)
+  private CompanyEntity companyEntity;
 
-	@CreationTimestamp
-	private LocalDateTime createdAt;
+  @Column(name = "company_id")
+  private UUID companyId;
+
+  @CreationTimestamp private LocalDateTime createdAt;
 }

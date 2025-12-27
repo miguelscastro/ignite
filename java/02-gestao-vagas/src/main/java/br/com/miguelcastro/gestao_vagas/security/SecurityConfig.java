@@ -1,6 +1,6 @@
 package br.com.miguelcastro.gestao_vagas.security;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
@@ -12,29 +12,40 @@ import org.springframework.security.web.authentication.www.BasicAuthenticationFi
 
 @Configuration
 @EnableMethodSecurity
+@RequiredArgsConstructor
 public class SecurityConfig {
 
-	@Autowired
-	private SecurityFilter securityFilter;
-	@Autowired
-	private SecurityCandidateFilter securityCandidateFilter;
+  private final SecurityFilter securityFilter;
+  private final SecurityCandidateFilter securityCandidateFilter;
 
-	private static final String[] SWAGGER_LIST = {"/swagger-ui/**", "/v3/api-docs/**", "/swagger-resources/**",
-			"/swagger-ui.html"};
+  private static final String[] SWAGGER_LIST = {
+    "/swagger-ui/**", "/v3/api-docs/**", "/swagger-resources/**", "/swagger-ui.html"
+  };
 
-	@Bean
-	SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-		return http.csrf(csrf -> csrf.disable()).authorizeHttpRequests(auth -> {
-			auth.requestMatchers("/candidate/").permitAll().requestMatchers("/company/").permitAll()
-					.requestMatchers("/company/auth").permitAll().requestMatchers("/candidate/auth").permitAll()
-					.requestMatchers(SWAGGER_LIST).permitAll();
-			auth.anyRequest().authenticated();
-		}).addFilterBefore(securityCandidateFilter, BasicAuthenticationFilter.class)
-				.addFilterBefore(securityFilter, BasicAuthenticationFilter.class).build();
-	}
+  @Bean
+  SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+    return http.csrf(csrf -> csrf.disable())
+        .authorizeHttpRequests(
+            auth -> {
+              auth.requestMatchers("/candidate/")
+                  .permitAll()
+                  .requestMatchers("/company/")
+                  .permitAll()
+                  .requestMatchers("/company/auth")
+                  .permitAll()
+                  .requestMatchers("/candidate/auth")
+                  .permitAll()
+                  .requestMatchers(SWAGGER_LIST)
+                  .permitAll();
+              auth.anyRequest().authenticated();
+            })
+        .addFilterBefore(securityCandidateFilter, BasicAuthenticationFilter.class)
+        .addFilterBefore(securityFilter, BasicAuthenticationFilter.class)
+        .build();
+  }
 
-	@Bean
-	PasswordEncoder passwordEncoder() {
-		return new BCryptPasswordEncoder();
-	}
+  @Bean
+  PasswordEncoder passwordEncoder() {
+    return new BCryptPasswordEncoder();
+  }
 }
