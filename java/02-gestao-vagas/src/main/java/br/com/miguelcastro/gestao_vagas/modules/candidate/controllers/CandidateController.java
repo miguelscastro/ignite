@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.miguelcastro.gestao_vagas.modules.candidate.CandidateEntity;
+import br.com.miguelcastro.gestao_vagas.modules.candidate.dto.ProfileCandidateResponseDTO;
 import br.com.miguelcastro.gestao_vagas.modules.candidate.useCases.CreateCandidateUseCase;
 import br.com.miguelcastro.gestao_vagas.modules.candidate.useCases.ListAllJobsByFilterUseCase;
 import br.com.miguelcastro.gestao_vagas.modules.candidate.useCases.ProfileCandidateUseCase;
@@ -52,6 +53,15 @@ public class CandidateController {
 
 	@PreAuthorize("hasRole('CANDIDATE')")
 	@GetMapping("/")
+	@Tag(name = "Candidato", description = "Informações do candidato")
+	@Operation(summary = "Perfil do candidato", description = "Essa função é responsável por buscar as informações do candidato")
+	@ApiResponses({
+		@ApiResponse(responseCode = "200", content = {
+			@Content(schema = @Schema(implementation = ProfileCandidateResponseDTO.class))
+		}),
+		@ApiResponse(responseCode = "400", description = "User not found"),
+	})
+	@SecurityRequirement(name = "jwt_auth")
 	public ResponseEntity<Object> get(HttpServletRequest request) {
 		var candidateId = request.getAttribute("candidate_id");
 		try {
@@ -65,7 +75,7 @@ public class CandidateController {
 
 	@PreAuthorize("hasRole('CANDIDATE')")
 	@GetMapping("/job")
-	@Tag(name = "Candidato")
+	@Tag(name = "Candidato", description = "Informações do candidato")
 	@Operation(summary = "Listagem de vagas disponível para o candidato", description = "Essa função é responsável por listar todas as vagas disponíveis baseado no filtro")
 	@ApiResponses({@ApiResponse(responseCode = "200", content = {
 			@Content(array = @ArraySchema(schema = @Schema(implementation = JobEntity.class)))})})
