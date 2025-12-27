@@ -9,7 +9,7 @@
     <!-- lookup parent from repository -->
   </parent>
   <groupId>br.com.miguelcastro</groupId>
-  <artifactId>gestao_vagas</artifactId>
+  <artifactId>gestao-vagas</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <name>gestao_vagas</name>
   <description>Demo project for Spring Boot</description>
