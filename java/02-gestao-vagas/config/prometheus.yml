@@ -1,0 +1,14 @@
+global:
+  # intervalo em que o prometheus colhe os dados
+  scrape_interval: 6s
+
+scrape_configs:
+  # nome do servico no prometheus
+  - job_name: "api-gestao_vagas"
+  # caminho de onde vem as metricas
+    metrics_path: "/actuator/prometheus"
+    static_configs:
+   # targets recebe um array com todas as urls que podem contem o metrics_path com as metricas
+    - targets: ["host.docker.internal:8080"]
+      labels:
+        application: "api-gestao_vagas"

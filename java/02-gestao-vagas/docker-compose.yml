@@ -8,3 +8,24 @@ services:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=root
       - POSTGRES_DB=gestao_vagas
+    networks:
+      - gv-network  
+  prometheus:
+    container_name: prometheus
+    image: prom/prometheus:latest
+    volumes:
+      - ./config/prometheus.yml:/etc/prometheus/prometheus.yml
+      - prometheus_data:/prometheus
+    networks:
+      - gv-network
+    extra_hosts:
+      - "host.docker.internal:host-gateway"  
+    ports:
+      - 9090:9090
+
+networks:
+  gv-network:
+    driver: bridge
+
+volumes:
+  prometheus_data:
