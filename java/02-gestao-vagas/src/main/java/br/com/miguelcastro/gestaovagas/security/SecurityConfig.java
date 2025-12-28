@@ -18,8 +18,8 @@ public class SecurityConfig {
   private final SecurityCompanyFilter securityCompanyFilter;
   private final SecurityCandidateFilter securityCandidateFilter;
 
-  private static final String[] SWAGGER_LIST = {
-    "/swagger-ui/**", "/v3/api-docs/**", "/swagger-resources/**", "/swagger-ui.html"
+  private static final String[] PERMIT_ALL_LIST = {
+    "/swagger-ui/**", "/v3/api-docs/**", "/swagger-resources/**", "/swagger-ui.html", "/actuator/**"
   };
 
   @Bean
@@ -35,7 +35,7 @@ public class SecurityConfig {
                   .permitAll()
                   .requestMatchers("/candidate/auth")
                   .permitAll()
-                  .requestMatchers(SWAGGER_LIST)
+                  .requestMatchers(PERMIT_ALL_LIST)
                   .permitAll();
               auth.anyRequest().authenticated();
             })

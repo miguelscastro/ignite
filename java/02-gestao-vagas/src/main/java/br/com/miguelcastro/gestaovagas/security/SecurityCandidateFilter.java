@@ -27,17 +27,6 @@ public class SecurityCandidateFilter extends OncePerRequestFilter {
       @NonNull FilterChain filterChain)
       throws ServletException, IOException {
 
-    String path = request.getRequestURI();
-
-    if (path.contains("/swagger-ui")
-        || path.contains("/v3/api-docs")
-        || path.contains("/webjars")
-        || path.contains("/swagger-resources")) {
-
-      filterChain.doFilter(request, response);
-      return;
-    }
-
     String header = request.getHeader("Authorization");
 
     if (request.getRequestURI().startsWith("/candidate") && header != null) {
