@@ -1,9 +1,13 @@
 package br.com.miguelcastro.gestaovagas.modules.company.controllers;
 
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import br.com.miguelcastro.gestaovagas.exceptions.CompanyNotFoundException;
 import br.com.miguelcastro.gestaovagas.modules.company.dto.CreateJobDTO;
 import br.com.miguelcastro.gestaovagas.modules.company.entities.CompanyEntity;
 import br.com.miguelcastro.gestaovagas.modules.company.repositories.CompanyRepository;
 import br.com.miguelcastro.gestaovagas.utils.TestUtils;
+import java.util.UUID;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
@@ -68,5 +72,26 @@ class CreateJobControllerIT {
             .andExpect(MockMvcResultMatchers.status().isOk());
 
     System.out.println(result);
+  }
+
+  @Test
+  void should_not_be_able_to_create_a_new_job_if_company_not_found() throws Exception {
+    var createJobDTO =
+        CreateJobDTO.builder()
+            .benefits("BENEFITS_TEST")
+            .description("DESCRIPTION_TEST")
+            .level("LEVEL_TEST")
+            .build();
+
+    mvc.perform(
+            MockMvcRequestBuilders.post("/company/job/")
+                .contentType(MediaType.APPLICATION_JSON)
+                .content(TestUtils.objectToJson(createJobDTO))
+                .header(
+                    "Authorization", TestUtils.generateToken(UUID.randomUUID(), "JAVAGAS_@123#")))
+        .andExpect(MockMvcResultMatchers.status().isBadRequest())
+        .andExpect(
+            result ->
+                assertTrue(result.getResolvedException() instanceof CompanyNotFoundException));
   }
 }

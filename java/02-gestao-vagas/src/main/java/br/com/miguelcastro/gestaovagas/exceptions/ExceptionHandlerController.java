@@ -35,4 +35,9 @@ public class ExceptionHandlerController {
 
     return new ResponseEntity<>(dto, HttpStatus.BAD_REQUEST);
   }
+
+  @ExceptionHandler(CompanyNotFoundException.class)
+  public ResponseEntity<Object> handleCompanyNotFound(CompanyNotFoundException e) {
+    return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
+  }
 }
