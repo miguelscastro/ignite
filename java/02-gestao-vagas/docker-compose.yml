@@ -22,6 +22,14 @@ services:
       - "host.docker.internal:host-gateway"  
     ports:
       - 9090:9090
+  grafana:
+    container_name: grafana
+    image: grafana/grafana:latest
+    ports:
+      - 3000:3000
+    networks:
+      - gv-network
+    
 
 networks:
   gv-network:
@@ -29,3 +37,4 @@ networks:
 
 volumes:
   prometheus_data:
+  grafana_data:
