@@ -15,7 +15,7 @@ import org.springframework.security.web.authentication.www.BasicAuthenticationFi
 @RequiredArgsConstructor
 public class SecurityConfig {
 
-  private final SecurityFilter securityFilter;
+  private final SecurityCompanyFilter securityCompanyFilter;
   private final SecurityCandidateFilter securityCandidateFilter;
 
   private static final String[] SWAGGER_LIST = {
@@ -40,7 +40,7 @@ public class SecurityConfig {
               auth.anyRequest().authenticated();
             })
         .addFilterBefore(securityCandidateFilter, BasicAuthenticationFilter.class)
-        .addFilterBefore(securityFilter, BasicAuthenticationFilter.class)
+        .addFilterBefore(securityCompanyFilter, BasicAuthenticationFilter.class)
         .build();
   }
 
