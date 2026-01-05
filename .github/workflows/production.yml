@@ -40,5 +40,15 @@ jobs:
           context: java/02-gestao-vagas
           push: true
           tags: |
-            miguelscastro/gestao_vagas:latest
-            miguelscastro/gestao_vagas:${{ github.sha }}
+            miguelscastro/gestao-vagas:latest
+            miguelscastro/gestao-vagas:${{ github.sha }}
+  deploy:
+    needs: build
+    runs-on: self-hosted
+    steps:
+      - name: Pull image docker hub
+        run: docker pull miguelscastro/gestao-vagas:latest
+      - name: remove old container
+        run: docker rm -f gestao-vagas || true
+      - name: Run docker container
+        run: docker run -d -p 8080:8080 -e DB_HOST=${{secrets.DB_HOST}} -e DB_PORT=${{secrets.DB_PORT}} -e DB_NAME=${{secrets.DB_NAME}} -e DB_USER=${{secrets.DB_USER}} -e DB_PASSWORD=${{secrets.DB_PASSWORD}} --name gestao-vagas miguelscastro/gestao-vagas:latest
