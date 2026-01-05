@@ -61,7 +61,7 @@ resource "aws_key_pair" "deployer" {
 
 # 4. Instância EC2
 resource "aws_instance" "app_server" {
-  ami           = "ami-068c0051b15cdb816" # Amazon Linux 2023 em us-east-1
+  ami           = "ami-0ecb62995f68bb549" # Ubuntu 24.04 LTS (Noble Numbat) em us-east-1
   instance_type = "t3.micro"             # Elegível para Free Tier
   
   key_name      = aws_key_pair.deployer.key_name # Vincula a chave à instância
