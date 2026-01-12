@@ -8,7 +8,7 @@ A curated collection of projects built during the **Ignite** formation modules. 
 
 ### Java
 - [01-fundamentos-java](java/01-fundamentos-java/) — Core/essential Java exercises and examples.
-- [01-livraria](java/01-livraria/) — Bookstore examples and exercises.
+- [01-livraria](https://github.com/miguelscastro/livraria/tree/8039945c7bb6814480d74248d9c21e44bc99c304) — Bookstore examples and exercises.
 - [02-fundamentos-java-mavenjdbc](java/02-fundamentos-java-mavenjdbc/) — JDBC + Maven exercises.
 - [03-fundamentos-springboot](java/03-fundamentos-springboot/) — Spring Boot fundamentals.
 - [04-gestao-vagas](java/04-gestao-vagas/) — Job management API; includes Docker and Prometheus config.
@@ -18,11 +18,11 @@ A curated collection of projects built during the **Ignite** formation modules. 
 ### React
 - [01-fundamentos-reactjs](react/01-fundamentos-reactjs/) — React + Vite basics.
 - [01-fundamentos-reactjs-ts](react/01-fundamentos-reactjs-ts/) — TypeScript + React fundamentals.
-- [01-todo-list](react/01-todo-list/) — Simple todo list app.
-- [02-coffee-delivery](react/02-coffee-delivery/) — Coffee shop UI exercises.
+- [01-todo-list](https://github.com/miguelscastro/to-do-list/tree/5699e3f23a1945d77a73774a0323cae8375500e2) — Simple todo list app.
+- [02-coffee-delivery](https://github.com/miguelscastro/coffee-delivery/tree/d66db726d07eeb3ffa259dadfe65bd76b8e0012b) — Coffee shop UI exercises.
 - [02-ignite-timer](react/02-ignite-timer/) — Timer app.
 - [03-dt-money](react/03-dt-money/) — Finance tracker.
-- [03-github-blog](react/03-github-blog/) — GitHub API-based blog.
+- [03-github-blog](https://github.com/miguelscastro/github-blog/tree/e653aec6ff0d7e853d56ff081f98878dff257718) — GitHub API-based blog.
 - [04-pizzashop/pizzashop-api](react/04-pizzashop/pizzashop-api/) — Pizza shop API.
 - [04-pizzashop/pizzashop-web](react/04-pizzashop/pizzashop-web/) — Pizza shop front-end.
 
