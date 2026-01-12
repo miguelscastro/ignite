@@ -1,35 +1,61 @@
 # 🍕 pizza.shop API
 
-Food delivery app (aka. iFood/Uber Eats) back-end built with TypeScript, Drizzle a ElysiaJS.
+Back-end for a food delivery app (in the spirit of iFood/Uber Eats), built with TypeScript, Drizzle and Elysia. The project is designed to be runtime-agnostic and can run on Bun, Node, or other Web Standard API compatible runtimes.
 
-> 🔥 This project aims to keep runtime agnostic, this means it should work on Bun, Node, Cloudflare Workers or any Web Standard API compatible runtime.
+---
 
-## Running
+## 🔧 Prerequisites
+- Node.js (or Bun) and package manager (npm / bun)
+- Docker & Docker Compose (for local DB)
 
-This project depends on Docker to setup database. With Docker installed, clone the project, install  dependencies, setup Docker containers and run the application.
+---
 
-> You must also run migrations to create database tables and run the seed to populate the database with fake data.
+## 🚀 Quick start (local)
 
-```sh
-bun i
+```bash
+# install deps (use bun or npm)
+# with bun
+bun install
+# or with npm
+npm install
+
+# start local databases
 docker compose up -d
+
+# run migrations and seed data
+# with bun
 bun migrate
 bun seed
+
+# start dev server
 bun dev
+# or with npm
+npm run dev
 ```
 
-## Features
+The API will start at the port printed in the console. Check `docker-compose.yml` and the project config for exact ports and DB settings.
 
-> The **summary** of the features are listed below. All the features contains E2E tests.
+---
 
-- it should be able to register a new restaurant
-- it should be able to sign in as a restaurant manager
-- it should be able to register as a new customer
-- it should be able to crete an order to the restaurant
-- it should be able to manage the restaurant menu
-- it should be able to manage the restaurant evaluations
-- it should be able to leave an evaluation
-- it should be able to manage the restaurant orders
-- it should be able to update the restaurant public profile
-- it should be able to open/close the restaurant
-- it should be able to list metrics from the restaurant
+## 🧪 Tests
+- End-to-end tests are included for the main features (see test scripts in package.json)
+
+---
+
+## 🔁 Features (summary)
+- Register restaurants and manage restaurant profiles
+- Restaurant manager sign-in and authentication flows
+- Register customers and create orders
+- Manage menu items and restaurant evaluations
+- Order lifecycle management
+- Metrics endpoints for restaurants
+
+---
+
+## 💡 Notes
+- Ensure Docker is running before executing migrations/seed that target the DB container.
+- Check `package.json` scripts for runtime-specific commands (bun or npm).
+
+---
+
+Happy hacking! ✅

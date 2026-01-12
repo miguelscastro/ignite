@@ -1,27 +1,39 @@
-# Ignite Feed
+# Ignite Feed — React + TypeScript
 
-Project built during the "Starting with React" module of the Ignite Bootcamp by Rocketseat.
+Social feed demo built during the Ignite React module (TypeScript + Vite).
 
-**Live demo:** *https://feed-miguelscastro.vercel.app/*
+**Live demo:** https://feed-miguelscastro.vercel.app/ (external deploy)
 
-## 🧠 About the project
+---
 
-A social media feed, similiar to instagram that allows users to comment on other posts (and create new hardcoded ones via code edition)
+## 🔧 Prerequisites
+- Node.js 16+ and npm (or yarn/pnpm)
 
-## 🚀 Technologies:
+---
 
-- React (Single Page Application framework)
-- TypeScript
-- Vite
+## 🚀 Quick start
 
-## ⚙️ How to run
+```bash
+cd react/01-fundamentos-reactjs-ts
+npm install
+npm run dev
+```
 
-Clone the repository: `git clone https://github.com/miguelscastro/ignite.git`
+Open http://localhost:5173 in your browser.
 
-enter it's folder: `cd ignite/react/01-fundamentos-reactjs-ts`
+---
 
-Install dependencies: `npm install`
+## 🛠️ Build
 
-Run the application: `npm run dev`
+```bash
+npm run build
+npx serve dist
+```
 
-Then open http://localhost:5173 in your browser.
+---
+
+## 🔗 Notes
+- This project is a course exercise; it includes examples for TypeScript and React patterns taught during the module.
+- See the monorepo `README.md` at the repository root for general setup instructions.
+
+Happy coding! ✅

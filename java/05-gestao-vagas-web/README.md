@@ -1,39 +1,50 @@
 
-# Gestão de vagas - FrontEnd
+# Gestão de Vagas — Frontend
 
-Este projeto foi desenvolvido como parte da trilha de Java do programa Ignite, com foco na criação da interface gráfica do front-end. Ele utiliza o Thymeleaf, uma template engine integrada ao Spring, que facilita o desenvolvimento de interfaces dinâmicas e simplifica a integração com o back-end. O objetivo foi criar uma interface gráfica funcional e eficiente, mantendo a simplicidade e agilidade no desenvolvimento.
+A simple frontend for the Job Management (Gestão de Vagas) project built with Spring Boot and Thymeleaf. This project serves as the UI that communicates with the backend API (see `java/04-gestao-vagas`).
 
- 
- 
-## Resetar o application.properties para o Ambiente Local
+---
 
-1 - Abra o arquivo src/main/resources/application.properties.
+## 🔧 Prerequisites
+- Java 11+ installed
+- Maven or use the Maven wrapper (`./mvnw`)
+- Backend API running (default: http://localhost:8080)
 
-2 - Defina no seu application.properties em qual porta ele irá rodar e em seguida, você precisara definir qual a porta, o back-end está rodando: 
-***
-    server.port=8082
-    host.api.gestao.vagas=http://localhost:8080 
-***
+---
 
-3- Salve o arquivo.
+## ⚙️ Configuration
+Update `src/main/resources/application.properties` for local development:
 
-## Executando a aplicação no Ambiente Local
+```properties
+server.port=8082
+host.api.gestao.vagas=http://localhost:8080
+```
 
-1 - Instale as dependências do projeto:
-***
-    mvn clean install
-***
+Adjust ports/host values as needed and save the file.
 
-2 - Inicie o projeto: 
-***
-    mvn spring-boot:run
-***
+---
 
-A aplicação estará disponível em http://localhost:8082.
-(Note que que, este 8082 deverá ser substituído pela porta que você configurou no seu application.properties.)
+## 🚀 Quick start (local)
 
+```bash
+# from repository root or project folder
+cd java/05-gestao-vagas-web
+./mvnw clean install
+./mvnw spring-boot:run
+```
 
->Importante: Certifique-se de não enviar alterações para a branch main no GitHub, pois isso pode causar a interrupção do site hospedado no Render. Sempre trabalhe em uma branch separada e valide as mudanças antes de realizar qualquer merge.
+The app will be available at http://localhost:8082 (or the `server.port` you configured).
+
+---
+
+## 💡 Notes
+- This frontend expects the backend API to be available at the URL defined in `host.api.gestao.vagas`.
+- If the backend runs on a different port, update `application.properties` accordingly.
+- Avoid committing changes to `main` if the project is deployed (e.g., Render); create feature branches and validate before merging.
+
+---
+
+Happy developing! ✅
 
 
 
