@@ -1,4 +1,4 @@
-import { test, expect } from '@playwright/test'
+import { expect, test } from '@playwright/test'
 
 test('update profile succesfully', async ({ page }) => {
   await page.goto('/', { waitUntil: 'networkidle' })
