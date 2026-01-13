@@ -13,7 +13,7 @@ test('sign in succesfully', async ({ page }) => {
   expect(toast).toBeVisible()
   await page.waitForTimeout(2000)
 })
-
+  
 test('sign in with wrong credentials', async ({ page }) => {
   await page.goto('/sign-in', { waitUntil: 'networkidle' })
 
