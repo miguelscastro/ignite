@@ -2,39 +2,37 @@
 
 **Full Stack technical growth repository** — a curated collection of projects and challenges from the **Ignite** training developed by Faculdade de Tecnologia Rocketseat (Rocketseat Technology College). Find exercises, complete apps, and architectures using **Java (Spring Boot)**, **Node.js**, **React (Vite)** and **Next.js**.
 
----
-
 ## 🔗 Index
 
 ### Java
 
-- `java/01-fundamentos-java` — Core Java exercises and examples.
-- `java/01-livraria` — Bookstore examples (external submodule/link).
-- `java/02-fundamentos-java-mavenjdbc` — JDBC + Maven.
-- `java/03-fundamentos-springboot` — Spring Boot fundamentals.
-- `java/04-gestao-vagas` — Job management API (includes Docker & Prometheus).
-- `java/05-gestao-vagas-web` — Web front-end for job management.
-- `java/06-petland` — Petland project with Docker orchestration.
+- [java/01-fundamentos-java](./java/01-fundamentos-java) — Core Java exercises and examples.
+- [java/01-livraria](./java/01-livraria) — Bookstore examples (external submodule/link).
+- [java/02-fundamentos-java-mavenjdbc](./java/02-fundamentos-java-mavenjdbc) — JDBC + Maven.
+- [java/03-fundamentos-springboot](./java/03-fundamentos-springboot) — Spring Boot fundamentals.
+- [java/04-gestao-vagas](./java/04-gestao-vagas) — Job management API (includes Docker & Prometheus).
+- [java/05-gestao-vagas-web](./java/05-gestao-vagas-web) — Web front-end for job management.
+- [java/06-petland](./java/06-petland) — Petland project with Docker orchestration.
 
 ### Node.js
 
-- `nodejs/01-fundamentos-nodejs` — Node.js fundamentals and exercises.
+- [nodejs/01-fundamentos-nodejs](./nodejs/01-fundamentos-nodejs) — Node.js fundamentals and exercises.
 
 ### React (reactjs)
 
-- `reactjs/01-fundamentos-reactjs` — React + Vite (basic).
-- `reactjs/01-fundamentos-reactjs-ts` — React + TypeScript.
-- `reactjs/01-todo-list` — 🎯 **Challenge Project** — To‑do list (submodule/external).
-- `reactjs/02-coffee-delivery` — 🎯 **Challenge Project** — Coffee Delivery UI (submodule/external).
-- `reactjs/02-ignite-timer` — Timer (ignite challenge).
-- `reactjs/03-dt-money` — Finance tracker.
-- `reactjs/03-github-blog` — 🎯 **Challenge Project** — GitHub API-based blog (submodule/external).
-- `reactjs/04-pizzashop/pizzashop-api` — Pizzashop API.
-- `reactjs/04-pizzashop/pizzashop-web` — Pizzashop front-end.
+- [reactjs/01-fundamentos-reactjs](./reactjs/01-fundamentos-reactjs) — React + Vite (basic).
+- [reactjs/01-fundamentos-reactjs-ts](./reactjs/01-fundamentos-reactjs-ts) — React + TypeScript.
+- [reactjs/01-todo-list](./reactjs/01-todo-list) — 🎯 **Challenge Project** — To‑do list (submodule/external).
+- [reactjs/02-coffee-delivery](./reactjs/02-coffee-delivery) — 🎯 **Challenge Project** — Coffee Delivery UI (submodule/external).
+- [reactjs/02-ignite-timer](./reactjs/02-ignite-timer) — Timer.
+- [reactjs/03-dt-money](./reactjs/03-dt-money) — Finance tracker.
+- [reactjs/03-github-blog](./reactjs/03-github-blog) — 🎯 **Challenge Project** — GitHub API-based blog (submodule/external).
+- [reactjs/04-pizzashop/pizzashop-api](./reactjs/04-pizzashop/pizzashop-api) — Pizzashop API.
+- [reactjs/04-pizzashop/pizzashop-web](./reactjs/04-pizzashop/pizzashop-web) — Pizzashop front-end.
 
 ### Next.js (nextjs)
 
-- `nextjs/01-ignite-shop` — Demo e-commerce built with Next.js.
+- [nextjs/01-ignite-shop](./nextjs/01-ignite-shop) — Demo e-commerce built with Next.js.
 
 > Note: Some projects are kept as submodules/external links (marked as **Challenge Project**) — check local README or remote link for details.
 
