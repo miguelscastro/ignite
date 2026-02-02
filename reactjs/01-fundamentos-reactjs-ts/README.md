@@ -2,8 +2,6 @@
 
 Social feed demo built during the Ignite React module (TypeScript + Vite).
 
-**Live demo:** https://feed-miguelscastro.vercel.app/ (external deploy)
-
 ---
 
 ## 🔧 Prerequisites
