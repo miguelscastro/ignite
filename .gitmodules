@@ -1,12 +1,12 @@
+[submodule "java/01-livraria"]
+	path = java/01-livraria
+	url = https://github.com/miguelscastro/livraria
 [submodule "reactjs/01-todo-list"]
 	path = reactjs/01-todo-list
 	url = https://github.com/miguelscastro/to-do-list
 [submodule "reactjs/02-coffee-delivery"]
 	path = reactjs/02-coffee-delivery
 	url = https://github.com/miguelscastro/coffee-delivery
-[submodule "java/01-livraria"]
-	path = java/01-livraria
-	url = https://github.com/miguelscastro/livraria
 [submodule "reactjs/03-github-blog"]
 	path = reactjs/03-github-blog
 	url = https://github.com/miguelscastro/github-blog
