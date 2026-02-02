@@ -7,7 +7,7 @@
 ### Java
 
 - [java/01-fundamentos-java](./java/01-fundamentos-java) — Core Java exercises and examples.
-- [java/01-livraria](./java/01-livraria) — Bookstore examples (external submodule/link).
+- [java/01-livraria](https://github.com/miguelscastro/livraria) — Bookstore examples (external submodule/link).
 - [java/02-fundamentos-java-mavenjdbc](./java/02-fundamentos-java-mavenjdbc) — JDBC + Maven.
 - [java/03-fundamentos-springboot](./java/03-fundamentos-springboot) — Spring Boot fundamentals.
 - [java/04-gestao-vagas](./java/04-gestao-vagas) — Job management API (includes Docker & Prometheus).
@@ -22,11 +22,11 @@
 
 - [reactjs/01-fundamentos-reactjs](./reactjs/01-fundamentos-reactjs) — React + Vite (basic).
 - [reactjs/01-fundamentos-reactjs-ts](./reactjs/01-fundamentos-reactjs-ts) — React + TypeScript.
-- [reactjs/01-todo-list](./reactjs/01-todo-list) — 🎯 **Challenge Project** — To‑do list (submodule/external).
-- [reactjs/02-coffee-delivery](./reactjs/02-coffee-delivery) — 🎯 **Challenge Project** — Coffee Delivery UI (submodule/external).
+- [reactjs/01-todo-list](https://github.com/miguelscastro/to-do-list) — 🎯 **Challenge Project** — To‑do list (submodule/external).
+- [reactjs/02-coffee-delivery](https://github.com/miguelscastro/coffee-delivery) — 🎯 **Challenge Project** — Coffee Delivery UI (submodule/external).
 - [reactjs/02-ignite-timer](./reactjs/02-ignite-timer) — Timer.
 - [reactjs/03-dt-money](./reactjs/03-dt-money) — Finance tracker.
-- [reactjs/03-github-blog](./reactjs/03-github-blog) — 🎯 **Challenge Project** — GitHub API-based blog (submodule/external).
+- [reactjs/03-github-blog](https://github.com/miguelscastro/github-blog) — 🎯 **Challenge Project** — GitHub API-based blog (submodule/external).
 - [reactjs/04-pizzashop/pizzashop-api](./reactjs/04-pizzashop/pizzashop-api) — Pizzashop API.
 - [reactjs/04-pizzashop/pizzashop-web](./reactjs/04-pizzashop/pizzashop-web) — Pizzashop front-end.
 
