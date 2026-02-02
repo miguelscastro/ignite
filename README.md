@@ -1,47 +1,67 @@
-# Ignite — Monorepo
+# Ignite
 
-A curated collection of projects built during the **Ignite** formation modules. This repository groups Java backend projects (Spring Boot) and React frontend applications. Use this README as an index and quick start guide for each project.
+**Full Stack technical growth repository** — a curated collection of projects and challenges from the **Ignite** training developed by Faculdade de Tecnologia Rocketseat (Rocketseat Technology College). Find exercises, complete apps, and architectures using **Java (Spring Boot)**, **Node.js**, **React (Vite)** and **Next.js**.
 
 ---
 
 ## 🔗 Index
 
 ### Java
-- [01-fundamentos-java](java/01-fundamentos-java/) — Core/essential Java exercises and examples.
-- [01-livraria](https://github.com/miguelscastro/livraria/tree/8039945c7bb6814480d74248d9c21e44bc99c304) — Bookstore examples and exercises.
-- [02-fundamentos-java-mavenjdbc](java/02-fundamentos-java-mavenjdbc/) — JDBC + Maven exercises.
-- [03-fundamentos-springboot](java/03-fundamentos-springboot/) — Spring Boot fundamentals.
-- [04-gestao-vagas](java/04-gestao-vagas/) — Job management API; includes Docker and Prometheus config.
-- [05-gestao-vagas-web](java/05-gestao-vagas-web/) — Web front-end for job management.
-- [06-petland](java/06-petland/) — Petland project (contains Docker setup and services).
 
-### React
-- [01-fundamentos-reactjs](react/01-fundamentos-reactjs/) — React + Vite basics.
-- [01-fundamentos-reactjs-ts](react/01-fundamentos-reactjs-ts/) — TypeScript + React fundamentals.
-- [01-todo-list](https://github.com/miguelscastro/to-do-list/tree/5699e3f23a1945d77a73774a0323cae8375500e2) — Simple todo list app.
-- [02-coffee-delivery](https://github.com/miguelscastro/coffee-delivery/tree/d66db726d07eeb3ffa259dadfe65bd76b8e0012b) — Coffee shop UI exercises.
-- [02-ignite-timer](react/02-ignite-timer/) — Timer app.
-- [03-dt-money](react/03-dt-money/) — Finance tracker.
-- [03-github-blog](https://github.com/miguelscastro/github-blog/tree/e653aec6ff0d7e853d56ff081f98878dff257718) — GitHub API-based blog.
-- [04-pizzashop/pizzashop-api](react/04-pizzashop/pizzashop-api/) — Pizza shop API.
-- [04-pizzashop/pizzashop-web](react/04-pizzashop/pizzashop-web/) — Pizza shop front-end.
+- `java/01-fundamentos-java` — Core Java exercises and examples.
+- `java/01-livraria` — Bookstore examples (external submodule/link).
+- `java/02-fundamentos-java-mavenjdbc` — JDBC + Maven.
+- `java/03-fundamentos-springboot` — Spring Boot fundamentals.
+- `java/04-gestao-vagas` — Job management API (includes Docker & Prometheus).
+- `java/05-gestao-vagas-web` — Web front-end for job management.
+- `java/06-petland` — Petland project with Docker orchestration.
 
-> Note: Each link points to the project folder; many subprojects include their own README with more details.
+### Node.js
+
+- `nodejs/01-fundamentos-nodejs` — Node.js fundamentals and exercises.
+
+### React (reactjs)
+
+- `reactjs/01-fundamentos-reactjs` — React + Vite (basic).
+- `reactjs/01-fundamentos-reactjs-ts` — React + TypeScript.
+- `reactjs/01-todo-list` — 🎯 **Challenge Project** — To‑do list (submodule/external).
+- `reactjs/02-coffee-delivery` — 🎯 **Challenge Project** — Coffee Delivery UI (submodule/external).
+- `reactjs/02-ignite-timer` — Timer (ignite challenge).
+- `reactjs/03-dt-money` — Finance tracker.
+- `reactjs/03-github-blog` — 🎯 **Challenge Project** — GitHub API-based blog (submodule/external).
+- `reactjs/04-pizzashop/pizzashop-api` — Pizzashop API.
+- `reactjs/04-pizzashop/pizzashop-web` — Pizzashop front-end.
+
+### Next.js (nextjs)
+
+- `nextjs/01-ignite-shop` — Demo e-commerce built with Next.js.
+
+> Note: Some projects are kept as submodules/external links (marked as **Challenge Project**) — check local README or remote link for details.
 
 ---
 
-## 🧰 Prerequisites (high level)
-- Java 11+ or 17+ (projects may target different versions; check the subproject pom.xml)
-- Maven (or use the provided wrapper `./mvnw` on Linux)
-- Node.js 16+ and npm (or yarn/pnpm as preferred)
-- Docker & Docker Compose (for projects that include `docker-compose.yml`)
+## 🌐 Active Deploys
+
+| Project                      | Deploy                                             |
+| ---------------------------- | -------------------------------------------------- |
+| `reactjs/01-todo-list`       | _https://todo-miguelscastro.vercel.app/_           |
+| `reactjs/02-coffee-delivery` | _https://coffeedelivery-miguelscastro.vercel.app/_ |
+| `reactjs/03-github-blog`     | _https://githubblog-miguelscastro.vercel.app/_     |
 
 ---
 
-## 🚀 Quick start (common commands)
+## 🧰 Prerequisites (short)
+
+- Java 11+ or 17+ (check `pom.xml` per project)
+- Maven (`./mvnw` available in most Java projects)
+- Node.js 16+ (recommended 18+) and npm / yarn / pnpm
+- Docker & Docker Compose (for orchestrated projects)
+
+---
+
+## 🚀 Quick Start (by stack)
 
 ### Java / Spring Boot
-General options when a `pom.xml` is present:
 
 - Run with the Maven wrapper (preferred):
 
@@ -50,50 +70,83 @@ cd java/03-fundamentos-springboot
 ./mvnw spring-boot:run
 ```
 
-- Build and run the packaged JAR:
+- Build and run JAR:
 
 ```bash
 ./mvnw clean package
 java -jar target/*.jar
 ```
 
-- If a project provides Docker Compose (e.g., `04-gestao-vagas`, `06-petland`):
+- With Docker Compose (e.g., `04-gestao-vagas`, `06-petland`):
 
 ```bash
 cd java/04-gestao-vagas
 docker-compose up --build
 ```
 
-Ports and DBs:
-- Common API port: `8080` (verify each project for exact configuration)
-- PostgreSQL (if used) usually maps to `5432` in compose setups — check each project for details.
+### Node.js
 
-### React / Vite
-For front-end projects with a `package.json`:
+- Example:
 
 ```bash
-cd react/01-fundamentos-reactjs
+cd nodejs/01-fundamentos-nodejs
 npm install
 npm run dev
 ```
 
-- Default dev port for Vite: `5173` (or as printed in the terminal).
-- Production build: `npm run build` and serve the `dist/` folder with a static server.
+- If the project uses `pnpm`:
+
+```bash
+pnpm install
+pnpm dev
+```
+
+### React (Vite)
+
+- Example with `reactjs/01-fundamentos-reactjs`:
+
+```bash
+cd reactjs/01-fundamentos-reactjs
+npm install
+npm run dev
+```
+
+- Production build:
+
+```bash
+npm run build
+# serve the dist folder with a static server (e.g., serve)
+```
+
+> Projects marked **🎯 Challenge Project** may have specific instructions in their local README; check each folder.
+
+### Next.js
+
+- Example with `nextjs/01-ignite-shop`:
+
+```bash
+cd nextjs/01-ignite-shop
+pnpm install # or npm install
+pnpm dev # or npm run dev
+```
+
+- Production build:
+
+```bash
+pnpm build
+pnpm start
+```
 
 ---
 
-## 🛠️ Notes & tips
-- Prefer the project-local README when available — it contains project-specific requirements and environment variables.
-- Use the included Maven wrapper (`./mvnw`) instead of a globally installed Maven to ensure consistent builds.
-- If a project requires a DB or external service, look for `docker-compose.yml` or `README.md` inside that subfolder.
+## 🛠️ Notes & Best practices
 
----
-
-## 📬 Contributing
-- Add new projects under `java/` or `react/` with a short README explaining how to run them.
-- Keep folder names prefixed with an incremental number for chronological order (e.g., `01-`, `02-`).
+- Always check the subproject README for environment variables and specific requirements.
+- Use wrappers (`./mvnw`, `pnpm`, etc.) for reproducible builds.
+- Keep numeric prefixes (`01-`, `02-`) to preserve chronological order.
 
 ---
 
 ## 📄 License
-See the repository root or individual project READMEs for license details.
+
+See each subproject README or the root LICENSE file for details.
