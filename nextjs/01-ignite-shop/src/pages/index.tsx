@@ -18,7 +18,7 @@ interface HomeProps {
   }[]
 }
 
-export default function Home({ products }: HomeProps) {
+export default function Home({ products }: Readonly<HomeProps>) {
   const [sliderRef] = useKeenSlider({
     slides: {
       perView: 3,
