@@ -13,4 +13,26 @@ export const Header = styled('header', {
   width: '100%',
   maxWidth: 1180,
   margin: '0 auto',
+
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'space-between', // Logo na esquerda, Sacola na direita
+
+  img: {
+    cursor: 'pointer',
+  },
+})
+
+export const OpenCartButton = styled('button', {
+  background: '$gray800',
+  border: 'none',
+  borderRadius: 6,
+  padding: '0.75rem',
+  color: '$gray300',
+  cursor: 'pointer',
+  position: 'relative',
+
+  '&:hover': {
+    color: '$gray100',
+  },
 })

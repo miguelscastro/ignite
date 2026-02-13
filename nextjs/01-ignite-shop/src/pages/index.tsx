@@ -9,17 +9,22 @@ import type { GetStaticProps } from 'next'
 import type Stripe from 'stripe'
 import Link from 'next/link'
 import Head from 'next/head'
+import { HandbagIcon } from '@phosphor-icons/react'
+import { useShoppingCart } from 'use-shopping-cart'
 
 interface HomeProps {
   products: {
     id: string
     name: string
-    imageUrl: string
-    price: string
+    image: string
+    price: number
+    currency: 'BRL'
+    formattedPrice: string
   }[]
 }
 
 export default function Home({ products }: Readonly<HomeProps>) {
+  const { addItem } = useShoppingCart()
   const [sliderRef] = useKeenSlider({
     slides: {
       perView: 3,
@@ -42,11 +47,21 @@ export default function Home({ products }: Readonly<HomeProps>) {
               prefetch={false}
             >
               <Product className="keen-slider__slide">
-                <Image src={product.imageUrl} width={520} height={480} alt="" />
+                <Image src={product.image} width={520} height={480} alt="" />
 
                 <footer>
-                  <strong>{product.name}</strong>
-                  <span>{product.price}</span>
+                  <div>
+                    <strong>{product.name}</strong>
+                    <span>{product.formattedPrice}</span>
+                  </div>
+                  <button
+                    onClick={e => {
+                      e.preventDefault()
+                      addItem(product)
+                    }}
+                  >
+                    <HandbagIcon size={32} weight="bold" />
+                  </button>
                 </footer>
               </Product>
             </Link>
@@ -68,13 +83,16 @@ export const getStaticProps: GetStaticProps = async () => {
     return {
       id: product.id,
       name: product.name,
-      imageUrl: product.images[0],
-      price: new Intl.NumberFormat('pt-BR', {
+      image: product.images[0],
+      price: price.unit_amount!,
+      currency: 'BRL',
+      formattedPrice: new Intl.NumberFormat('pt-BR', {
         style: 'currency',
         currency: 'BRL',
       }).format(price.unit_amount! / 100),
     }
   })
+
   return {
     props: {
       products,

@@ -4,42 +4,28 @@ import {
   ProductContainer,
   ProductDetails,
 } from '@/styles/pages/product'
-import axios from 'axios'
 import type { GetStaticPaths, GetStaticProps } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
-import { useState } from 'react'
 import type Stripe from 'stripe'
+import { useShoppingCart } from 'use-shopping-cart'
 
 interface ProductProps {
   product: {
     id: string
     name: string
-    imageUrl: string
-    price: string
+    image: string
+    price: number
+    currency: 'BRL'
+    formattedPrice: string
     description: string
     defaultPriceId: string
   }
 }
 
 export default function Product({ product }: ProductProps) {
-  const [isCreatingCheckoutSession, setIsCreatingCheckoutSession] =
-    useState(false)
+  const { addItem } = useShoppingCart()
 
-  async function handleBuyProduct() {
-    setIsCreatingCheckoutSession(true)
-    try {
-      const response = await axios.post('/api/checkout', {
-        priceId: product.defaultPriceId,
-      })
-
-      const { checkoutUrl } = response.data
-      globalThis.location.href = checkoutUrl
-    } catch {
-      setIsCreatingCheckoutSession(false)
-      alert('falha ao redirecionar ao checkout!')
-    }
-  }
   return (
     <>
       <Head>
@@ -48,19 +34,14 @@ export default function Product({ product }: ProductProps) {
 
       <ProductContainer>
         <ImageContainer>
-          <Image src={product.imageUrl} alt="" width={520} height={480} />
+          <Image src={product.image} alt="" width={520} height={480} />
         </ImageContainer>
 
         <ProductDetails>
           <h1>{product.name}</h1>
-          <span>{product.price}</span>
+          <span>{product.formattedPrice}</span>
           <p>{product.description}</p>
-          <button
-            onClick={handleBuyProduct}
-            disabled={isCreatingCheckoutSession}
-          >
-            Comprar agora
-          </button>
+          <button onClick={() => addItem(product)}>Colocar na sacola</button>
         </ProductDetails>
       </ProductContainer>
     </>
@@ -87,8 +68,10 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       product: {
         id: product.id,
         name: product.name,
-        imageUrl: product.images[0],
-        price: new Intl.NumberFormat('pt-BR', {
+        image: product.images[0],
+        price: price.unit_amount!,
+        currency: 'BRL',
+        formattedPrice: new Intl.NumberFormat('pt-BR', {
           style: 'currency',
           currency: 'BRL',
         }).format(price.unit_amount! / 100),

@@ -29,6 +29,7 @@ export default defineConfig([
       // Regras de limpeza de código
       'no-unused-vars': 'off',
       '@typescript-eslint/no-unused-vars': ['warn'],
+      '@typescript-eslint/no-explicit-any': ['warn'],
       'react/self-closing-comp': 'error',
       'react/jsx-no-useless-fragment': 'warn',
     },

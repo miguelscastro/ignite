@@ -42,15 +42,38 @@ export const Product = styled('div', {
     opacity: 0,
     transition: 'all 0.2s ease-in-out',
 
-    strong: {
-      fontSize: '$lg',
-      color: '$gray100',
+    div: {
+      display: 'flex',
+      flexDirection: 'column',
+
+      strong: {
+        fontSize: '$lg',
+        color: '$gray100',
+      },
+
+      span: {
+        fontSize: '$xl',
+        fontWeight: 'bold',
+        color: '$green300',
+      },
     },
 
-    span: {
-      fontSize: '$xl',
-      fontWeight: 'bold',
-      color: '$green300',
+    button: {
+      background: 'none',
+      border: 'none',
+      padding: 0,
+      outline: 'none',
+      cursor: 'pointer',
+      font: 'inherit',
+      color: 'inherit',
+      appearance: 'none',
+    },
+
+    svg: {
+      backgroundColor: '$green500',
+      color: '$white',
+      padding: 4,
+      borderRadius: 4,
     },
   },
 
