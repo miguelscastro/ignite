@@ -9,7 +9,7 @@ import (
 	"strings"
 )
 
-func main(){
+func main() {
 	fmt.Println("Jogo da Adivinhação")
 	fmt.Println("Um número aleatório será sorteado. Tente acertar. O número é um inteiro entre 0 e 100")
 
@@ -30,18 +30,18 @@ func main(){
 		}
 
 		switch {
-			case chuteInt < x:
-				fmt.Println("Você errou. O número sorteado é maior que", chuteInt)
-			case chuteInt > x:
-				fmt.Println("Você errou. O número sorteado é menor que", chuteInt)
-			case chuteInt == x:
-				fmt.Printf(
-					"Parabéns! Você acertou! O número era: %d\n"+
-						"Você acertou em %d tentativas.\n"+
-						"Essas foram as suas tentativas: %v\n",
-					x, i + 1, chutes[:i],
-				)
-				return
+		case chuteInt < x:
+			fmt.Println("Você errou. O número sorteado é maior que", chuteInt)
+		case chuteInt > x:
+			fmt.Println("Você errou. O número sorteado é menor que", chuteInt)
+		case chuteInt == x:
+			fmt.Printf(
+				"Parabéns! Você acertou! O número era: %d\n"+
+					"Você acertou em %d tentativas.\n"+
+					"Essas foram as suas tentativas: %v\n",
+				x, i+1, chutes[:i],
+			)
+			return
 		}
 
 		chutes[i] = chuteInt
@@ -51,5 +51,5 @@ func main(){
 			"Você teve 10 tentativas.\n"+
 			"Essas foram as suas tentativas: %v\n",
 		x, chutes,
-)
+	)
 }

@@ -15,7 +15,7 @@ func main() {
 	// 3. Closure / Higher-Order Function
 	// O 'multiplicador' captura o valor 2 e "guarda" com ele.
 	duplicar := criarMultiplicador(2)
-	fmt.Println("Dobro de 10:", duplicar(10)) 
+	fmt.Println("Dobro de 10:", duplicar(10))
 }
 
 // somar demonstra a simplificação de tipos (a, b int)
@@ -28,7 +28,7 @@ func obterNomeCompleto() (string, string) {
 	return "Engenharia", "Whirlpool"
 }
 
-// somarVarios é uma função variádica. 
+// somarVarios é uma função variádica.
 // Internamente, 'nums' é tratado como uma lista (slice).
 func somarVarios(nums ...int) int {
 	total := 0

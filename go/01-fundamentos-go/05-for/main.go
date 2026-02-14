@@ -40,7 +40,7 @@ func main() {
 
 func analisarMemoriaRange() {
 	arr := [3]int{1, 2, 3}
-	
+
 	// 'i' e 'v' são declarados uma vez e reutilizados.
 	// O valor muda, mas o endereço de memória da variável de iteração é o mesmo.
 	for i, v := range arr {

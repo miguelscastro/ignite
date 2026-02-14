@@ -55,7 +55,7 @@ func deferEmLoopCorreto() {
 		func(nome string) {
 			fmt.Printf("  Abrindo arquivo: %s\n", nome)
 			// Simulação de abertura
-			// file, _ := os.Open(nome) 
+			// file, _ := os.Open(nome)
 			defer fmt.Printf("  [Defer] Fechando arquivo: %s\n", nome)
 		}(f)
 	}
