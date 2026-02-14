@@ -35,16 +35,12 @@ export default function App({ Component, pageProps }: AppProps) {
           <Header>
             <Image src={logoImg} alt="" onClick={() => router.push('/')} />
 
-            {/* Botão que abre o carrinho */}
             <OpenCartButton onClick={() => setIsCartOpen(true)}>
               <HandbagIcon weight="bold" size={24} />
-              {/* Se quiser mostrar a contagem de itens aqui */}
             </OpenCartButton>
           </Header>
 
           <Component {...pageProps} />
-
-          {/* O ternário que você queria, controlado pelo estado local do App */}
           {isCartOpen && <Cart onClose={() => setIsCartOpen(false)} />}
         </Container>
       ) : null}
