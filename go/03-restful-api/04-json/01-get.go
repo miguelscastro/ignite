@@ -1,7 +1,6 @@
 package main
 
 import (
-	"encoding/json"
 	"net/http"
 	"strconv"
 
@@ -35,17 +34,10 @@ func handleGetUsers(db map[int64]User) http.HandlerFunc {
 
 		user, ok := db[id]
 		if !ok {
-			// Retorno manual de erro em formato JSON para manter o contrato da API.
-			w.WriteHeader(http.StatusNotFound)
-			_, _ = w.Write([]byte(`{"error":"user not found"}`))
+			sendJSON(w, Response{Error: "user not found"}, http.StatusNotFound)
 			return
 		}
 
-		data, err := json.Marshal(user)
-		if err != nil {
-			http.Error(w, "something went wrong", http.StatusInternalServerError)
-			return
-		}
-		_, _ = w.Write(data)
+		sendJSON(w, Response{Data: user}, http.StatusOK)
 	}
 }

@@ -20,18 +20,26 @@ func handlePostUsers(db map[int64]User) http.HandlerFunc {
 			var maxErr *http.MaxBytesError
 			// Avalia se o erro foi causado pelo estouro do limite de bytes definido.
 			if errors.As(err, &maxErr) {
-				http.Error(w, "body too large", http.StatusRequestEntityTooLarge)
+				sendJSON(w, Response{Error: "body too large"}, http.StatusRequestEntityTooLarge)
 				return
 			}
 			fmt.Println(err)
-			http.Error(w, "something went wrong", http.StatusInternalServerError)
+			sendJSON(
+				w,
+				Response{Error: "something went wrong"},
+				http.StatusInternalServerError,
+			)
 			return
 		}
 
 		var user User
 		// Unmarshal converte os bytes em memória para a struct de destino.
 		if err := json.Unmarshal(data, &user); err != nil {
-			http.Error(w, "invalid body", http.StatusUnprocessableEntity)
+			sendJSON(
+				w,
+				Response{Error: "invalid body"},
+				http.StatusUnprocessableEntity,
+			)
 			return
 		}
 
