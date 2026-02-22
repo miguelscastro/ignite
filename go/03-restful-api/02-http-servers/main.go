@@ -1,7 +1,7 @@
 package main
 
 func main() {
-	// FillStruct()
+	FillStruct()
 	HTTPServers()
-	// Routing()
+	Routing()
 }
