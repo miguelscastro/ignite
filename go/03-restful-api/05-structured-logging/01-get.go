@@ -7,15 +7,6 @@ import (
 	"github.com/go-chi/chi/v5"
 )
 
-type User struct {
-	Username string
-
-	ID   int64 `json:"id,string"`
-	Role string
-
-	Password string `json:"-"`
-}
-
 func JSONMiddleware(next http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Content-type", "application/json")
