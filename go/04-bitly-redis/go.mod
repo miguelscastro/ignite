@@ -1,4 +1,4 @@
-module 04-bit-ly-redis
+module github.com/miguelscastro/ignite/go/04-bitly-redis
 
 go 1.25.0
 

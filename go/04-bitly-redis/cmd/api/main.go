@@ -5,8 +5,8 @@ import (
 	"net/http"
 	"time"
 
-	"04-bit-ly-redis/internal/api"
-	"04-bit-ly-redis/repositories"
+	"github.com/miguelscastro/ignite/go/04-bitly-redis/internal/api"
+	"github.com/miguelscastro/ignite/go/04-bitly-redis/repositories"
 
 	"github.com/redis/go-redis/v9"
 )

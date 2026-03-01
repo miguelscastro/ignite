@@ -1,5 +1,3 @@
-module 02-conceitos-avancados
+module github.com/miguelscastro/ignite/go/02-conceitos-avancados
 
 go 1.25.0
-
-require golang.org/x/exp v0.0.0-20260218203240-3dfff04db8fa // indirect

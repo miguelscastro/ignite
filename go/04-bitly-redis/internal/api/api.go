@@ -3,7 +3,7 @@ package api
 import (
 	"net/http"
 
-	"04-bit-ly-redis/repositories"
+	"github.com/miguelscastro/ignite/go/04-bitly-redis/repositories"
 
 	"github.com/go-chi/chi/v5"
 	"github.com/go-chi/chi/v5/middleware"

@@ -1,4 +1,4 @@
-module 03-restful-api
+module github.com/miguelscastro/ignite/go/03-restful-api
 
 go 1.25.0
 

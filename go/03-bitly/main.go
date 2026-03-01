@@ -5,7 +5,7 @@ import (
 	"net/http"
 	"time"
 
-	"03-bitly/api"
+	"github.com/miguelscastro/ignite/go/03-bitly/api"
 )
 
 func main() {

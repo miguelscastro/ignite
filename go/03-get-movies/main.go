@@ -6,7 +6,7 @@ import (
 	"os"
 	"time"
 
-	"03-get-movies/api"
+	"github.com/miguelscastro/ignite/go/03-get-movies/api"
 )
 
 func main() {

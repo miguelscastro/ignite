@@ -6,7 +6,7 @@ import (
 	"net/http"
 	"net/url"
 
-	"04-bit-ly-redis/repositories"
+	"github.com/miguelscastro/ignite/go/04-bitly-redis/repositories"
 )
 
 type shortenURLRequest struct {

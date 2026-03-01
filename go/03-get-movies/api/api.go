@@ -7,7 +7,7 @@ import (
 	"net/http"
 	"net/url"
 
-	"03-get-movies/movies"
+	"github.com/miguelscastro/ignite/go/03-get-movies/movies"
 
 	"github.com/go-chi/chi/v5"
 	"github.com/go-chi/chi/v5/middleware"

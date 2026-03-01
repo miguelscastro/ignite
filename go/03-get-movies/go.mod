@@ -1,4 +1,4 @@
-module 03-get-movies
+module github.com/miguelscastro/ignite/go/03-get-movies
 
 go 1.25.0
 

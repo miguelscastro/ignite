@@ -1,4 +1,4 @@
-module 04-databases
+module github.com/miguelscastro/ignite/go/04-databases
 
 go 1.26.0
 
