@@ -9,7 +9,7 @@ services:
       POSTGRES_PASSWORD: ${GOBID_DATABASE_PASSWORD}
       POSTGRES_DB: ${GOBID_DATABASE_NAME}
     volumes:
-      - db:/var/lib/postgresql/data
+      - db:/var/lib/postgresql
 
 volumes:
   db:
