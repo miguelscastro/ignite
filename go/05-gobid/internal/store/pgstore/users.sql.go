@@ -16,11 +16,23 @@ const createUser = `-- name: CreateUser :one
 INSERT INTO
   users ("user_name", "email", "password_hash", "bio")
 VALUES
-  ("$1", "$2", "$3", "$4") RETURNING id
+  ($1, $2, $3, $4) RETURNING id
 `
 
-func (q *Queries) CreateUser(ctx context.Context) (uuid.UUID, error) {
-	row := q.db.QueryRow(ctx, createUser)
+type CreateUserParams struct {
+	UserName     string `json:"user_name"`
+	Email        string `json:"email"`
+	PasswordHash []byte `json:"password_hash"`
+	Bio          string `json:"bio"`
+}
+
+func (q *Queries) CreateUser(ctx context.Context, arg CreateUserParams) (uuid.UUID, error) {
+	row := q.db.QueryRow(ctx, createUser,
+		arg.UserName,
+		arg.Email,
+		arg.PasswordHash,
+		arg.Bio,
+	)
 	var id uuid.UUID
 	err := row.Scan(&id)
 	return id, err
@@ -38,7 +50,7 @@ SELECT
 FROM
   users
 WHERE
-  id = "$1"
+  id = $1
 `
 
 type GetUserByIdRow struct {
@@ -51,8 +63,8 @@ type GetUserByIdRow struct {
 	UpdatedAt    pgtype.Timestamptz `json:"updated_at"`
 }
 
-func (q *Queries) GetUserById(ctx context.Context) (GetUserByIdRow, error) {
-	row := q.db.QueryRow(ctx, getUserById)
+func (q *Queries) GetUserById(ctx context.Context, id uuid.UUID) (GetUserByIdRow, error) {
+	row := q.db.QueryRow(ctx, getUserById, id)
 	var i GetUserByIdRow
 	err := row.Scan(
 		&i.ID,
