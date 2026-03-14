@@ -10,3 +10,6 @@
 [submodule "reactjs/03-github-blog"]
 	path = reactjs/03-github-blog
 	url = https://github.com/miguelscastro/github-blog
+[submodule "go/05-gobid"]
+	path = go/05-gobid
+	url = git@github.com:miguelscastro/go-bid
