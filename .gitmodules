@@ -19,3 +19,6 @@
 [submodule "java/04-gestao-vagas"]
 	path = java/04-gestao-vagas
 	url = git@github.com:miguelscastro/gestao-vagas.git
+[submodule "reactjs/04-pizzashop"]
+	path = reactjs/04-pizzashop
+	url = git@github.com:miguelscastro/pizzashop.git

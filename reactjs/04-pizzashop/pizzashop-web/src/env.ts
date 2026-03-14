@@ -1,9 +1,0 @@
-import z4 from 'zod/v4'
-
-const envSchema = z4.object({
-  MODE: z4.enum(['production', 'development', 'test']),
-  VITE_API_URL: z4.string(),
-  VITE_ENABLE_API_DELAY: z4.string().transform((value) => value === 'true'),
-})
-
-export const env = envSchema.parse(import.meta.env)
