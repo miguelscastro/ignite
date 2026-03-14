@@ -16,3 +16,6 @@
 [submodule "go/04-bitly-redis"]
 	path = go/04-bitly-redis
 	url = git@github.com:miguelscastro/bitly-redis
+[submodule "java/04-gestao-vagas"]
+	path = java/04-gestao-vagas
+	url = git@github.com:miguelscastro/gestao-vagas.git
