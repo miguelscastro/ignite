@@ -13,3 +13,6 @@
 [submodule "go/05-gobid"]
 	path = go/05-gobid
 	url = git@github.com:miguelscastro/go-bid
+[submodule "go/04-bitly-redis"]
+	path = go/04-bitly-redis
+	url = git@github.com:miguelscastro/bitly-redis
