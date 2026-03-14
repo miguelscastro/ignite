@@ -1,37 +1,44 @@
-# DT Money — Finance Tracker
+# 💰 DT Money
 
-Finance tracker demo built with React and Vite as part of the Ignite module.
+A finance tracker interface showing transactions, balance summaries, and filters.
 
 ---
 
 ## 🔧 Prerequisites
-- Node.js 16+ and npm (or yarn/pnpm)
+
+- Node.js 16+ installed
+- npm/yarn/pnpm installed
 
 ---
 
-## 🚀 Quick start
+## 🚀 Quick start (local)
 
 ```bash
-cd react/03-dt-money
+cd reactjs/03-dt-money
 npm install
 npm run dev
 ```
 
-Open the app at the port printed by Vite (typically `http://localhost:5173`).
+---
+
+## 🧪 Tests
+
+- No automated tests included.
 
 ---
 
-## 🛠️ Build
+## 🔁 Features (summary)
 
-```bash
-npm run build
-npx serve dist
-```
+- Transaction manager UI
+- Financial summary cards
+- Filters and category views
 
 ---
 
-## 🔗 Notes
-- Check `server.json` and `package.json` for dev server or API proxy configuration.
-- This is a course example — check `src/` for implementation details.
+## 💡 Notes
 
-Happy learning! ✅
+- The app runs on Vite default port (`5173`).
+
+---
+
+Happy coding! ✅

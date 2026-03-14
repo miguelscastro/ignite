@@ -1,32 +1,46 @@
-# Fundamentos Java — Maven + JDBC
+# 💾 Fundamentos Java — Maven + JDBC
 
-Examples and exercises covering Java fundamentals with a focus on using Maven and JDBC.
+A Java fundamentals project demonstrating Maven build lifecycle and JDBC connectivity with database operations.
 
 ---
 
 ## 🔧 Prerequisites
+
 - Java 11+ installed
-- Maven (3.6+)
+- Maven installed (or use `./mvnw`)
 
 ---
 
-## 🚀 Quick start
+## 🚀 Quick start (local)
 
 ```bash
 cd java/02-fundamentos-java-mavenjdbc
-mvn clean install
-# Run specific main classes from your IDE or via maven exec
-mvn exec:java -Dexec.mainClass="com.example.Main"
+./mvnw clean package
+./mvnw exec:java -Dexec.mainClass="com.example.Main"
 ```
 
-> Replace `com.example.Main` with the actual main class you want to run.
+The app runs using the main class configured in the project.
 
 ---
 
-## 🛠️ Notes
-- Check the `pom.xml` for project-specific plugins and dependencies.
-- Tests (if present) can be executed with `mvn test`.
+## 🧪 Tests
+
+- No automated tests included.
 
 ---
 
-Happy learning! ✅
+## 🔁 Features (summary)
+
+- Build with Maven
+- JDBC database operations
+- Commands and examples for JDBC usage
+
+---
+
+## 💡 Notes
+
+- Check `pom.xml` for dependencies and main class definitions.
+
+---
+
+Happy coding! ✅

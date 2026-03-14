@@ -1,37 +1,43 @@
-# Ignite Feed — React + TypeScript
+# ⚛️ React + TypeScript Fundamentals
 
-Social feed demo built during the Ignite React module (TypeScript + Vite).
+A React + TypeScript starter project illustrating typed components and state management.
 
 ---
 
 ## 🔧 Prerequisites
-- Node.js 16+ and npm (or yarn/pnpm)
+
+- Node.js 16+ installed
+- npm/yarn/pnpm installed
 
 ---
 
-## 🚀 Quick start
+## 🚀 Quick start (local)
 
 ```bash
-cd react/01-fundamentos-reactjs-ts
+cd reactjs/01-fundamentos-reactjs-ts
 npm install
 npm run dev
 ```
 
-Open http://localhost:5173 in your browser.
+---
+
+## 🧪 Tests
+
+- No automated tests included.
 
 ---
 
-## 🛠️ Build
+## 🔁 Features (summary)
 
-```bash
-npm run build
-npx serve dist
-```
+- React + TypeScript UI examples
+- Vite build system
 
 ---
 
-## 🔗 Notes
-- This project is a course exercise; it includes examples for TypeScript and React patterns taught during the module.
-- See the monorepo `README.md` at the repository root for general setup instructions.
+## 💡 Notes
+
+- Open `http://localhost:5173` in browser.
+
+---
 
 Happy coding! ✅

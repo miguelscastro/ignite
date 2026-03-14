@@ -1,38 +1,44 @@
-# React + Vite — Fundamentals
+# ⚛️ React Fundamentals
 
-Small example projects and exercises built during the Ignite React fundamentals module. These apps use Vite + React and include ESLint configuration.
+A collection of React + Vite examples to practice component architecture, state, and events.
 
 ---
 
 ## 🔧 Prerequisites
-- Node.js 16+ and npm (or yarn/pnpm)
+
+- Node.js 16+ installed
+- npm/yarn/pnpm installed
 
 ---
 
-## 🚀 Quick start
+## 🚀 Quick start (local)
 
 ```bash
-cd react/01-fundamentos-reactjs
+cd reactjs/01-fundamentos-reactjs
 npm install
 npm run dev
 ```
 
-Open the app at http://localhost:5173 (port printed by Vite).
+---
+
+## 🧪 Tests
+
+- No automated tests included.
 
 ---
 
-## 🛠️ Build for production
+## 🔁 Features (summary)
 
-```bash
-npm run build
-# serve the dist/ folder using a static server
-npx serve dist
-```
+- React component examples
+- Basic state management
+- Vite dev environment
 
 ---
 
-## 🔗 Notes
-- This folder contains minimal templates and examples used during the course. For TypeScript examples see `react/01-fundamentos-reactjs-ts`.
-- See the repository root `README.md` for general monorepo instructions and tooling.
+## 💡 Notes
 
-Happy learning! ✅
+- The app runs on the default Vite port (`5173`).
+
+---
+
+Happy coding! ✅

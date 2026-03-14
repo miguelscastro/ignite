@@ -1,6 +1,6 @@
 # Ignite
 
-**Full Stack technical growth repository** — a curated collection of projects and challenges from the **Ignite** training developed by Faculdade de Tecnologia Rocketseat (Rocketseat Technology College). Find exercises, complete apps, and architectures using **Java (Spring Boot)**, **Node.js**, **React (Vite)** and **Next.js**.
+**Full Stack technical growth repository** — a curated collection of projects and challenges from the **Ignite** training developed by Faculdade de Tecnologia Rocketseat (Rocketseat Technology College). Find exercises, complete apps, and architectures using **Java _(Spring Boot)_**, **Node.js**, **React _(Vite)_**, **Next.js** and **Go _(Golang)_**.
 
 ## 🔗 Index
 
@@ -10,9 +10,22 @@
 - [java/01-livraria](https://github.com/miguelscastro/livraria) — Bookstore examples (external submodule/link).
 - [java/02-fundamentos-java-mavenjdbc](./java/02-fundamentos-java-mavenjdbc) — JDBC + Maven.
 - [java/03-fundamentos-springboot](./java/03-fundamentos-springboot) — Spring Boot fundamentals.
-- [java/04-gestao-vagas](./java/04-gestao-vagas) — Job management API (includes Docker & Prometheus).
+- [java/04-gestao-vagas](https://github.com/miguelscastro/gestao-vagas) — Job management API (includes Docker & Prometheus).
 - [java/05-gestao-vagas-web](./java/05-gestao-vagas-web) — Web front-end for job management.
 - [java/06-petland](./java/06-petland) — Petland project with Docker orchestration.
+
+### Go
+
+- [go/01-fundamentos-go](./go/01-fundamentos-go) — Go basics (packages, functions, variables, arrays, loops, conditionals, defer).
+- [go/01-guessing-game](./go/01-guessing-game) — CLI guessing game.
+- [go/02-currency-exchange](./go/02-currency-exchange) — Currency converter example.
+- [go/02-one-billion-row-challenge](./go/02-one-billion-row-challenge) — Data processing challenge.
+- [go/03-bitly](./go/03-bitly) — URL shortener API.
+- [go/03-get-movies](./go/03-get-movies) — External API movie search service.
+- [go/03-restful-api](./go/03-restful-api) — RESTful API examples (server, JSON, logging).
+- [go/04-bitly-redis](https://github.com/miguelscastro/bitly-redis) — Redis-backed URL shortener.
+- [go/04-databases](./go/04-databases) — SQL/SQLite and integration examples.
+- [go/05-gobid](https://github.com/miguelscastro/go-bid) — GoBid service with Docker Compose.
 
 ### Node.js
 
@@ -27,14 +40,14 @@
 - [reactjs/02-ignite-timer](./reactjs/02-ignite-timer) — Timer.
 - [reactjs/03-dt-money](./reactjs/03-dt-money) — Finance tracker.
 - [reactjs/03-github-blog](https://github.com/miguelscastro/github-blog) — 🎯 **Challenge Project** — GitHub API-based blog (submodule/external).
-- [reactjs/04-pizzashop/pizzashop-api](./reactjs/04-pizzashop/pizzashop-api) — Pizzashop API.
-- [reactjs/04-pizzashop/pizzashop-web](./reactjs/04-pizzashop/pizzashop-web) — Pizzashop front-end.
+- [reactjs/04-pizzashop/pizzashop-api](https://github.com/miguelscastro/pizzashop/tree/main/pizzashop-api) — Pizzashop API.
+- [reactjs/04-pizzashop/pizzashop-web](https://github.com/miguelscastro/pizzashop/tree/main/pizzashop-web) — Pizzashop front-end.
 
 ### Next.js (nextjs)
 
 - [nextjs/01-ignite-shop](./nextjs/01-ignite-shop) — Demo e-commerce built with Next.js.
 
-> Note: Some projects are kept as submodules/external links (marked as **Challenge Project**) — check local README or remote link for details.
+> Note: Some projects are kept as submodules/external links depending on complexity (some of them marked as **Challenge Project**) — check local README or remote link for details.
 
 ---
 
@@ -135,12 +148,21 @@ pnpm build
 pnpm start
 ```
 
+### Go
+
+- Example with `go/02-currency-exchange`:
+
+```bash
+cd go/02-currency-exchange
+go run main.go
+```
+
 ---
 
 ## 🛠️ Notes & Best practices
 
 - Always check the subproject README for environment variables and specific requirements.
-- Use wrappers (`./mvnw`, `pnpm`, etc.) for reproducible builds.
+- Use wrappers (`./mvnw`, `pnpm`, etc.) for reproducible builds; check `go.mod` for Go dependency versions.
 - Keep numeric prefixes (`01-`, `02-`) to preserve chronological order.
 
 ---

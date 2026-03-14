@@ -1,13 +1,14 @@
-# Petland
+# 🐾 Petland
 
-Petland is a sample project from the Ignite modules. It includes services and Docker setup to run locally.
+A Java service project with Docker Compose orchestration demonstrating microservice patterns.
 
 ---
 
 ## 🔧 Prerequisites
-- Java 11+ or 17+
-- Docker & Docker Compose
-- Maven (or use the included wrapper `./mvnw`)
+
+- Java 11+ installed
+- Docker & Docker Compose installed
+- Maven installed (or use `./mvnw`)
 
 ---
 
@@ -15,18 +16,37 @@ Petland is a sample project from the Ignite modules. It includes services and Do
 
 ```bash
 cd java/06-petland
-# build
-./mvnw clean package
-# or use docker-compose if provided
-docker-compose up --build
+./mvnw spring-boot:run
 ```
 
-See `HELP.md` for project-specific notes.
+---
+
+## 🚀 Quick start (Docker)
+
+```bash
+cd java/06-petland
+docker compose up --build
+```
+
+---
+
+## 🧪 Tests
+
+- Run `./mvnw test` for unit tests.
+
+---
+
+## 🔁 Features (summary)
+
+- Service APIs for Petland domain
+- Docker Compose setup
 
 ---
 
 ## 💡 Notes
-- Check `docker-compose.yml` for service definitions and exposed ports.
-- Use feature branches and avoid pushing directly to `main` for deployed projects.
 
-Happy developing! ✅
+- Check `docker-compose.yml` for service ports and dependencies.
+
+---
+
+Happy coding! ✅

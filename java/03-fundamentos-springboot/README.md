@@ -1,12 +1,13 @@
-# Fundamentos Spring Boot
+# 🚀 Fundamentos Spring Boot
 
-Examples and exercises demonstrating Spring Boot fundamentals used during the Ignite formation.
+A Spring Boot sample application covering basic configuration, REST endpoints, and development workflow.
 
 ---
 
 ## 🔧 Prerequisites
-- Java 11+ (or project-targeted JDK)
-- Maven (or use the included wrapper `./mvnw`)
+
+- Java 11+ installed
+- Maven installed (or use `./mvnw`)
 
 ---
 
@@ -14,21 +15,31 @@ Examples and exercises demonstrating Spring Boot fundamentals used during the Ig
 
 ```bash
 cd java/03-fundamentos-springboot
-# using the included maven wrapper
 ./mvnw spring-boot:run
 ```
 
-Or build and run the jar:
-
-```bash
-./mvnw clean package
-java -jar target/*.jar
-```
+The service starts on the default port defined in `application.properties`.
 
 ---
 
-## 🛠️ Notes
-- Check `src/main/resources/application.properties` for environment configuration.
-- Use your IDE to run and debug Spring Boot apps; main class is annotated with `@SpringBootApplication`.
+## 🧪 Tests
 
-Happy developing! ✅
+- No automated tests included.
+
+---
+
+## 🔁 Features (summary)
+
+- Spring Boot application startup
+- REST controller examples
+- Default property-based configuration
+
+---
+
+## 💡 Notes
+
+- Check `src/main/resources/application.properties` for runtime settings.
+
+---
+
+Happy coding! ✅
